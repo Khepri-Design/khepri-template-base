@@ -1,0 +1,117 @@
+
+{% block kd_navigation %}
+    <div id="header" class="header fixed-top">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+            {% block kd_logo %}
+                {% set logoImage = site.logoImg.toFile %}
+                <a href="{{ site.url }}" class="kd-logo d-flex align-items-center"><img src="{{ logoImage != '' ? logoImage.url : "media/plugins/khepri-design/khepri-base/img/placeholder/logo.svg" }}" alt="{{site.brandname }} Logo"/></a>
+            {% endblock %}
+            {% block kd_navigation_list %}
+                <nav id="navbar" class="navbar">
+                    <ul>
+                        {% if site.maintenance.isFalse %}
+                            {% if site.showHomepageInNavigation.isTrue %}
+                                <li><a class="nav-link {% if page.url == site.url %}active{% endif %}" href="{{ site.url }}">Startseite</a></li>
+                            {% endif %}
+                            {% block kd_navigation_item %}
+                                {% set dropindex = 0 %}
+                                {% set childdropindex = 0 %}
+                                {% for listingItem in site.children.listed %}
+                                    {% if listingItem.mainNavigation.isTrue %}
+                                        {% if listingItem.hasListedChildren and listingItem.template.name != 'blog-overview' and listingItem.template.name != 'event-overview' %}
+                                            {% set hasListedChildren = false %}
+                                            {% for listedChildren in listingItem.children.listed %}
+                                                {% if listedChildren.mainNavigation.isTrue %}
+                                                    {% set hasListedChildren = true %}
+                                                {% endif %}
+                                            {% endfor %}
+                                            {% if hasListedChildren %}
+                                                <li class="dropdown">
+                                                    <div class="dropdown-container d-flex align-items-center">
+                                                        <a {% if page.url == listingItem.url or listingItem.children.filterBy('url', page.url) != '' or listingItem.children.children.filterBy('url', page.url) != '' %} class="active"{% endif %} {% if listingItem.structuredPage.isFalse %}href="{% if listingItem.customurl != '' %}{{ listingItem.customurl }}{% else %}{{ listingItem.url }}{% endif %}"{% endif %} {% if listingItem.newTab.isTrue %}target="_blank"{% endif %}>
+                                                            <span>{{ listingItem.title }}</span>
+                                                        </a>
+                                                        <i class="fa-solid fa-chevron-down" onclick="dropdownToggle({{ dropindex }})"></i>
+                                                        {% set dropindex = dropindex + 1 %}
+                                                    </div>
+                                                    <ul class="first-drop">
+                                                        {% for listingItemChild in listingItem.children.listed %}
+                                                            {% if  listingItemChild.mainNavigation.isTrue %}
+                                                                {% if listingItemChild.hasListedChildren and listingItemChild.template.name != 'blog-overview' and listingItemChild.template.name != 'event-overview' %}
+                                                                    <li class="dropdown">
+                                                                        <div class="dropdown-dropdown-container d-flex align-items-center">
+                                                                            <a {% if page.url == listingItemChild.url or listingItemChild.children.filterBy('url', page.url) != '' %} class="active"{% endif %} {% if listingItemChild.structuredPage.isFalse %}href="{% if listingItemChild.customurl != '' %}{{ listingItemChild.customurl }}{% else %}{{ listingItemChild.url }}{% endif %}"{% endif %} {% if listingItem.newTab.isTrue %}target="_blank"{% endif %}>
+                                                                                <span>{{ listingItemChild.title }}</span>
+                                                                            </a>
+                                                                            {% set hasListedChildren = false %}
+                                                                                {% for listedChildChildren in listingItemChild.children.listed %}
+                                                                                    {% if listedChildChildren.mainNavigation.isTrue %}
+                                                                                        {% set hasListedChildren = true %}
+                                                                                    {% endif %}
+                                                                                {% endfor %}
+                                                                            {% if hasListedChildren %}
+                                                                                <i class="fa-solid fa-chevron-down" onclick="childDropdownToggle({{ childdropindex }})"></i>
+                                                                            {% endif %}
+                                                                            {% set childdropindex = childdropindex + 1 %}
+                                                                        </div>
+                                                                        <ul class="second-drop">
+                                                                            {% for listingItemChildChild in listingItemChild.children.listed %}
+                                                                                {% if  listingItemChildChild.mainNavigation.isTrue %}
+                                                                                    <li><a class="nav-link-child{% if page.url == listingItemChildChild.url %} active{% endif %}" {% if listingItemChildChild.structuredPage.isFalse %}href="{% if listingItemChildChild.customurl != '' %}{{ listingItemChildChild.customurl }}{% else %}{{ listingItemChildChild.url }}{% endif %}"{% endif %}
+                                                                                        {% if listingItem.newTab.isTrue %}target="_blank"{% endif %}>{{ listingItemChildChild.title }}</a>
+                                                                                    </li>
+                                                                                {% endif %}
+                                                                            {% endfor %}
+                                                                        </ul>
+                                                                    </li>
+                                                                {% else %}
+                                                                    <li><a class="nav-link{% if page.url == listingItemChild.url %} active{% endif %}" {% if listingItem.structuredPage.isFalse %}href="{% if listingItemChild.customurl != '' %}{{ listingItemChild.customurl }}{% else %}{{ listingItemChild.url }}{% endif %}"{% endif %}
+                                                                        {% if listingItem.newTab.isTrue %}target="_blank"{% endif %}>{{ listingItemChild.title }}</a>
+                                                                    </li>
+                                                                {% endif %}
+                                                            {% endif %}
+                                                        {% endfor %}
+                                                    </ul>
+                                                </li>
+                                            {% else %}
+                                                <li><a class="nav-link 
+                                                    {% if page.url == listingItem.url %}active{% endif %}" 
+                                                    {% if listingItem.structuredPage.isFalse %}href="{% if listingItem.customurl != '' %}{{ listingItem.customurl }}{% else %}{{ listingItem.url }}{% endif %}"{% endif %} {% if listingItem.newTab.isTrue %}target="_blank"{% endif %}>{{ listingItem.title }}</a>
+                                                </li>
+                                            {% endif %}
+                                        {% else %}
+                                            <li><a class="nav-link 
+                                                {% if page.url == listingItem.url %}active{% endif %}" 
+                                                {% if listingItem.structuredPage.isFalse %}href="{% if listingItem.customurl != '' %}{{ listingItem.customurl }}{% else %}{{ listingItem.url }}{% endif %}"{% endif %} {% if listingItem.newTab.isTrue %}target="_blank"{% endif %}>{{ listingItem.title }}</a>
+                                            </li>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                            {% endblock %}
+                            {% block kd_logout %}
+                                {% if kirby.user %}
+                                    {% if kirby.user.isAdmin == false %}
+                                        <a class="kd-underlined" href="{{ site.url }}/logout">abmelden</a>
+                                    {% endif %}
+                                {% endif %}
+                            {% endblock %}
+                        {% elseif site.serviceNavigation.isfalse %}
+                            {% block kd_legal %}
+                                <li><a href="{{ site.children.filterBy('intendedTemplate', 'impressum') }}">Impressum</a></li>
+                                <li><a href="{{ site.children.filterBy('intendedTemplate', 'datenschutz') }}">Datenschutz</a></li>
+                            {% endblock %}
+                        {% endif %}
+                    </ul>
+                    {# <i class="fa-solid fa-bars mobile-nav-toggle"></i> #}
+                    <div class="mobile-nav-toggle" aria-expanded="false">
+                        <svg class="mobile-nav-toggle-icon" viewbox="0 0 100 100" width="40">
+                            <rect class="first line" width="80" height="10" x="10" y="20" rx="5"></rect>
+                            <rect class="second line" width="80" height="10" x="10" y="45" rx="5"></rect>
+                            <rect class="third line" width="80" height="10" x="10" y="70" rx="5"></rect>
+                        </svg>
+                    </div>
+                </nav>
+            {% endblock %}
+        </div>
+    </div>
+{% endblock %}

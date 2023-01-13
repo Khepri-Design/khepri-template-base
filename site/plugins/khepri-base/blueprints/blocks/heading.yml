@@ -1,0 +1,53 @@
+name: field.blocks.heading.name
+icon: title
+wysiwyg: true
+preview: heading
+fields:
+  level:
+    label: Relevanz
+    type: toggles
+    default: h2
+    options:
+      - value: h1
+        text: h1
+        icon: title
+      - value: h2
+        text: h2
+        icon: title
+      - value: h3
+        text: h3
+        icon: title
+      - value: h4
+        text: h4
+        icon: title
+      - value: h5
+        text: h5
+        icon: title
+      - value: h6
+        text: h6
+        icon: title
+  text:
+    label: field.blocks.heading.text
+    type: writer
+    inline: true
+    width: 1/2
+    placeholder: field.blocks.heading.placeholder
+  centered:
+    label: Überschrift zentrieren
+    default: false
+    type: toggle
+    width: 1/2
+  color:
+    label: Hintergrundfarbe
+    type: colors
+    width: 1/2
+    help: Farbwert eintragen
+  classes:
+    label: Zusätzliche CSS-Klassen
+    help: z.B. "kd-round" oder "kd-container" (mehrere Klassen mit Leerzeichen trennen)
+    type: text
+    width: 1/2
+  animation:
+    help: z.B. "fade-in", "zoom-in" oder "slide-up"
+    type: text
+    width: 1/2

@@ -1,0 +1,102 @@
+{% block kd_contact %}
+    {% if (page.needsLogin.isTrue and kirby.user) or page.needsLogin.isFalse %}
+        {{ snippet('head/head') }}
+
+        {# loading-animation #}
+        <div class="kd-loader-bg d-none" id="loader">
+            <div class="kd-loader"></div>
+        </div>
+
+            {{ snippet('navigation/navigation') }}
+            <div class="kd-main-container">
+                {% include '@plugins/khepri-base/elements/layout.twig' %}
+                <div class="kd-container">
+                    {% if success %}
+                        <div class="alert kd-success text-center">
+                            <p>{{ success }}</p>
+                            <a style="color: var(--kd-text-color-primary);" class=" kd-underlined text-center" href="{{ site.url }}">zurück zur Startseite</a>
+                        </div>
+                    {% else %}
+                        {% if alert['error'] is defined %}
+                            <div>{{ alert['error'] }}</div>
+                        {% endif %}
+                        <form method="post" action="{{ page.url }}" class="kd-form" enctype="multipart/form-data">
+                            <div class="row">
+                                <div class="honeypot">
+                                    <label for="website">Website <abbr title="required">*</abbr></label>
+                                    <input type="url" id="website" name="website" tabindex="-1">
+                                </div>
+                                <div class="col-lg-4 kd-field">
+                                    <label for="name">Name <abbr class="kd-abbreviation">*</abbr></label>
+                                    <input type="text" id="name" name="name" placeholder="Marius Böhm" value="{{ esc(data['name'] ?? '', 'attr') }}">
+                                    {% if alert['name'] is defined %}
+                                        <p class="kd-alert error"> {{ esc(alert['name']) }} </p>
+                                    {% endif %}
+                                </div>
+                                <div class="col-lg-4 kd-field">
+                                    <label for="email">E-Mail <abbr class="kd-abbreviation">*</abbr></label>
+                                    <input type="email" id="email" name="email" placeholder="beispiel@mail.de" value="{{ esc(data['email'] ?? '', 'attr') }}">
+                                    {% if alert['email'] is defined %}
+                                        <p class="kd-alert error"> {{ esc(alert['email']) }} </p>
+                                    {% endif %}
+                                </div>
+                                <div class="col-lg-4 kd-field">
+                                    <label for="phone">Telefonnummer <span class="kd-abbreviation">(optional)<span></label>
+                                    <input type="phone" id="phone" name="phone" placeholder="+49 123456789" value="{{ esc(data['phone'] ?? '', 'attr') }}">
+                                    {% if alert['phone'] is defined %}
+                                        <p class="kd-alert error"> {{ esc(alert['phone']) }} </p>
+                                    {% endif %}
+                                </div>
+                                <div class="col-md-6 kd-field">
+                                    <label for="subject">Betreff <span class="kd-abbreviation">*<span></label>
+                                    <input type="text" id="subject" name="subject" placeholder="Um was geht es?" value="{{ esc(data['subject'] ?? '', 'attr') }}">
+                                    {% if alert['subject'] is defined %}
+                                        <p class="kd-alert error"> {{ esc(alert['subject']) }} </p>
+                                    {% endif %}
+                                </div>
+                                <div class="col-md-12 kd-field">
+                                    <label for="text">Nachricht <abbr class="kd-abbreviation">*</abbr></label>
+                                    <textarea rows="8" id="text" name="text" placeholder="Nachricht eingeben...">{{ esc(data['text'] ?? '') }}</textarea>
+                                    {% if alert['text'] is defined %}
+                                        <p class="kd-alert error"> {{ esc(alert['text']) }} </p>
+                                    {% endif %}
+                                </div>
+                                <div class="col-md-12 kd-field">
+                                    <label for="file">Dateien hochladen <span class="kd-abbreviation">(optional)<span></label><br>
+                                    <div id="dropzone" class="kd-dropzone" onclick="document.getElementById('fileupload').click();" ondrop="updateFiles(event.dataTransfer.files)">
+                                        <div class="text-center"><span class="text-center">Dateien in diesen Bereich ziehen oder <span class="kd-underlined">klicken</span> zum auswählen.</span><div class="kd-abbreviation mt-2">(max. 5 Dateien)</div></div>
+                                        <input class="d-none" id="fileupload" name="file[]" type="file" multiple accept="image/png,image/jpeg, application/zip, application/pdf" onchange="updateFiles(this.files)">
+                                        <div class="kd-fileupload-preview"></div>
+                                    </div> 
+                                    <input hidden id="fileupload" name="file[]" type="file" multiple accept="image/png,image/jpeg, application/zip, application/pdf" onchange="updateFiles(this.files)">
+                                    <input hidden name="uploadFiles[]" id="uploadFiles" type="file">
+                                    <div class="kd-file-list mt-3"></div>
+                                    <span class="kd-delete-files kd-mouseover-pointer kd-underlined d-none" style="color: #eb5959" onclick="removeFiles()"><br>Dateien entfernen</span>
+                                </div>
+                                {% if fileAlerts is not null %}
+                                    {% for fileAlert in fileAlerts %}
+                                        <p class="kd-alert error">{{ fileAlert }}</p>
+                                    {% endfor %}
+                                {% endif %}
+                                <label for="agree">
+                                    <input class="kd-checkbox" type="checkbox" id="agree" name="agree">&nbsp;&nbsp;Ich akzeptiere die <a class="kd-underlined" href="{{ page('Datenschutz').url }}" target="_blank">Datenschutzbestimmungen</a> <span class="kd-abbreviation">*<span>
+                                </label>
+                                {% if alert['agree'] is defined %}
+                                    <p class="kd-alert error"> {{ esc(alert['agree']) }} </p>
+                                {% endif %}
+                                <p>Mit <span style="color: var(--kd-brand-color-primary);">*</span> gekennzeichnete Felder sind Plichtfelder.</p>
+                                <div class="col-md-12 d-flex justify-content-center kd-field">
+                                    <input class="kd-btn kd-btn-primary kd-mouseover-pointer" id="submit" type="submit" name="submit" value="Senden">
+                                </div>
+                            </div>
+                        </form>
+                    {% endif %}
+                </div>
+            </div>
+            
+        {{ snippet('footer/footer') }}
+    {% else %}
+        {% set goPage = page.id %}
+        {{ go("/login?go="~goPage) }}
+    {% endif %}
+{% endblock %}

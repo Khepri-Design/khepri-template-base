@@ -1,0 +1,10 @@
+<figure>
+  <div class="kd-gallery row">
+    {% for galleryImage in block.images.toFiles() %}
+      <div class="col-xl-4 col-md-6 mb-3">
+        <img class="kd-round" loading="lazy" data-gallery-img data-gallery-img-caption="{{ galleryImage.galleryCaption }}" 
+        data-gallery-img-url="{{ galleryImage.url }}" src="{{ galleryImage.url }}">
+      </div>
+    {% endfor %}
+  </div>
+</figure>

@@ -1,0 +1,9 @@
+<div class="kd-socialmedia-section">
+    <div class="kd-socialmedia-items">
+        {% for sm in site.socialLinks.toBlocks %}
+            {% if sm.link != '' and sm.inactive.isfalse %}
+                <a class="kd-socialmedia-item" href="{% if sm.socialIcon == 'square-envelope' %}mailto:{% elseif sm.socialIcon == 'square-phone' %}tel:{% endif %}{{ sm.link }}" target="_blank"><i class="{% if sm.socialIcon == 'square-envelope' or sm.socialIcon == 'square-phone' or sm.socialIcon == 'link'%}fa-solid{% else %}fa-brands{% endif %} fa-{{ sm.socialIcon }}"></i></a>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>

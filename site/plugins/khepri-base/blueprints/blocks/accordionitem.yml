@@ -1,0 +1,24 @@
+name: accordionitem
+title: Akordeon-Element
+icon: angle-down
+
+fields:
+  head:
+    type: text
+    label: Element-Titel
+    placeholder: Titel eingeben...
+    help: wird auf dem ausklappbaren Element angezeigt
+  blocks:
+    type: blocks
+    label: Inhalt
+    fieldsets:
+      - heading
+      - textadvanced
+      - image
+      - video
+      - download
+      - list
+      - button
+      - hint
+      - spacer
+      - divider

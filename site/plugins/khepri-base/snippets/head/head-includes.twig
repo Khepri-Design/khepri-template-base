@@ -1,0 +1,12 @@
+{% block kd_includes %}
+    {% set faviconFile = 'assets/img/static/favicon.png' %}
+    {% set faviconFilePlaceholder = 'media/plugins/khepri-design/khepri-base/img/placeholder/favicon.png' %}
+    {% set appletouchFile = 'assets/img/static/apple-touch-icon.png' %}
+    {% set appletouchFilePlaceholder = 'media/plugins/khepri-design/khepri-base/img/placeholder/apple-touch-icon.png' %}
+
+    <link href="{{ site.url }}/{{ faviconFile is existing file ? faviconFile : faviconFilePlaceholder }}" rel="icon" />
+    <link href="{{ site.url }}/{{ appletouchFile is existing file ? appletouchFile : appletouchFilePlaceholder }}" rel="apple-touch-icon" />
+    <meta name="msapplication-TileImage" content="{{ site.url }}/{{ appletouchFile is existing file ? appletouchFile : appletouchFilePlaceholder }}" />
+    
+    {{ css('media/plugins/khepri-design/khepri-base/css/min/all.min.css') }}
+{% endblock %}

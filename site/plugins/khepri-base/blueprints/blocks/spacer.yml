@@ -1,0 +1,20 @@
+name: Spacer
+title: Abstand
+icon: expand
+
+fields:
+  spaceValue:
+    label: Abstand (Wert)
+    type: text
+    width: 1/2
+  spaceUnit:
+    label: Einheit
+    type: select
+    default: px
+    options:
+      px: px
+      "%": %
+      rem: rem
+      vw: vw
+      vh: vh
+    width: 1/2

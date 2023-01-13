@@ -1,0 +1,16 @@
+{% for layout in page.layout.toLayouts %}
+    {% if layout.fullWidthBackground.isTrue %}<div {% if layout.color != '' %}style="background-color: {{ layout.color }};"{% endif %}>{% endif %}
+        <section class="grid{{ layout.fullWidth.isTrue ? '' : ' kd-container' }}
+        {% if layout.classes != '' %} {{ layout.classes }}{% endif %}"
+        {% if layout.animation != '' %} data-aos="{{ layout.animation }}" {% endif %}
+        {% if layout.fullWidthBackground.isFalse %}{% if layout.color != '' %}style="background-color: {{ layout.color }};"{% endif %}{% endif %}>
+        {% for column in layout.columns %}
+            <div class="column" style="--columns:{{ column.span }}">
+                <div class="blocks">
+                {{ column.blocks | raw }}
+                </div>
+            </div>
+        {% endfor %}
+        </section>
+    {% if layout.fullWidthBackground.isTrue %}</div>{% endif %}
+{% endfor %}

@@ -1,0 +1,16 @@
+<div class="d-flex justify-content-center">
+  {% if block.apperance != 'active' %}
+    <a class="kd-btn kd-btn-primary
+    {% if block.classes != '' %} {{ block.classes }} {% endif %}" 
+      href="{{ block.dataFile.toFile.url }}" {% if block.animation != '' %} data-aos="{{ block.animation }}" {% endif %}download target="_blank" 
+      {% if block.color != '' %}style="background-color: {{ block.color }}"{% endif %}>
+      {{ block.downloadText }}
+    </a>
+  {% else %}
+    <a {% if block.classes != '' %} class="{{ block.classes }}" {% endif %}
+      href="{{ block.dataFile.toFile.url }}" {% if block.animation != '' %} data-aos="{{ block.animation }}" {% endif %}download target="_blank"
+      {% if block.color != '' %}style="background-color: {{ block.color }}"{% endif %}>
+      {{ block.dataFile.toFile.id | trim('home/', 'left') }}
+    </a>
+  {% endif %}
+</div>

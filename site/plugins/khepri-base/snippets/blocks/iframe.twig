@@ -1,0 +1,17 @@
+{% if block.file %}
+    {% set pdfFile = block.file.toFile %}
+
+    {% if block.buttonDownload.isTrue or block.buttonPreview.isTrue %}
+        <div class="mb-3">
+            {% if block.buttonDownload.isTrue %}
+                <a href="{{ pdfFile.url }}" download class="kd-underlined">Download</a>&nbsp;&nbsp;
+            {% endif %}
+            {% if block.buttonPreview.isTrue %}
+                <a href="{{ pdfFile.url }}" target="_blank" class="kd-underlined">Öffnen</a>
+            {% endif %}
+        </div>
+    {% endif %}
+    <div style="width: 100%; height: 100vh; overflow: hidden; overflow-y: scroll">
+        <iframe src="{{ pdfFile.url }}#zoom=FitH" frameborder="0" width="100%" height="{{ block.customHeight != '' ? block.customHeight : "100%" }}"></iframe>
+    </div>
+{% endif %}

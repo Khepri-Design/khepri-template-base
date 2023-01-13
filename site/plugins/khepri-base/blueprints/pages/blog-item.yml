@@ -1,0 +1,55 @@
+title: Beitrag
+
+tabs:
+    
+  Beitrag:
+    icon: text
+    sections:
+      stammDaten:
+        label: Inhalt
+        type: fields
+        fields:
+          blogImg:
+            type: files
+            label: Beitragsbild
+            help: Wird als Hauptbild im Beitrag und als Beitragsvorschau angezeigt
+            query: page.images
+            multiple: false
+            width: 1/2
+          customTitle:
+            type: text
+            label: Titel
+            help: Titel des Beitrags
+            width: 1/2
+          date:
+            type: date
+            label: Datum
+            help: Wird im Beitrag und in der Übersicht ausgegeben
+            display: DD.MM.YYYY
+            width: 1/2
+          teaserText:
+            type: textarea
+            label: Vorschautext
+            maxlength: 200
+            help: Wird als Vorschau in der Beitragsübersicht angezeigt
+            width: 1/2
+      content:
+        label: Inhalt
+        type: fields
+        fields:
+          layout:
+            extends: sections/pagebuilder
+      dataFiles:
+        label: Dateien
+        type: files
+        size: tiny
+        layout: cards
+
+  Meta-Daten:
+    extends: tabs/meta
+  Einstellungen:
+    extends: tabs/settings
+    fields:
+      otherSettings: false
+      structuredPage: false
+      needsLogin: false

@@ -1,0 +1,18 @@
+.kd-card {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  word-wrap: break-word;
+  background-color: transparent;
+  background-clip: border-box;
+  box-shadow: 0px 0px 5px #c0c0c0;
+
+  .kd-card-body {
+    flex: 1 1 auto;
+    padding: 1.25rem;
+
+    .kd-card-title {
+      margin-bottom: 0.75rem
+    }
+  }
+}

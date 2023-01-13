@@ -1,0 +1,14 @@
+{% block kd_datenschutz %}
+    {{ snippet('head/head') }}
+
+        {{ snippet('navigation/navigation') }}
+        <div class="kd-main-container mb-5 kd-container">
+            <div class="column">
+                <h1 class="kd-heading justify-content-center d-flex text-center">Datenschutzerklärung</h1>
+                <hr class="mt-3 mb-3 kd-divider">
+            </div>
+            {{ page.pageContent.kt | raw }}
+        </div>
+        
+    {{ snippet('footer/footer') }}
+{% endblock %}

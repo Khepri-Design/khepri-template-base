@@ -1,0 +1,17 @@
+@font-face {
+  font-family: kd-font;
+  src: 
+    local('Poppins, sans-serif'),
+    local('Poppins'),
+    url('../../webfonts/poppins-regular.woff') format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: kd-font-handwritten;
+  src: 
+    url('../../webfonts/marckscript-regular.woff') format("woff");
+  font-weight: normal;
+  font-style: normal;
+}

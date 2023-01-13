@@ -1,0 +1,61 @@
+title: Event
+
+tabs:
+    
+  Event:
+    icon: text
+    sections:
+      stammDaten:
+        label: Inhalt
+        type: fields
+        fields:
+          eventImg:
+            type: files
+            label: Eventbild
+            help: Wird in der Eventvorschau und Übersicht angezeigt
+            query: page.images
+            multiple: false
+            width: 1/2
+          customTitle:
+            type: text
+            label: Titel
+            help: Titel des Events
+            width: 1/2
+          dateTime:
+            type: date
+            label: Datum
+            help: Wird im Event und in der Übersicht ausgegeben
+            display: DD.MM.YYYY
+            time:
+              display: HH:mm
+            width: 1/2
+          location:
+            type: text
+            label: Ort
+            width: 1/2
+          teaserText:
+            type: textarea
+            label: Vorschautext
+            maxlength: 200
+            help: Wird als Vorschau in der Eventübersicht angezeigt
+            width: 1/2
+      content:
+        label: Inhalt
+        type: fields
+        fields:
+          layout:
+            extends: sections/pagebuilder
+      dataFiles:
+        label: Dateien
+        type: files
+        size: tiny
+        layout: cards
+
+  Meta-Daten:
+    extends: tabs/meta
+  Einstellungen:
+    extends: tabs/settings
+    fields:
+      otherSettings: false
+      structuredPage: false
+      needsLogin: false

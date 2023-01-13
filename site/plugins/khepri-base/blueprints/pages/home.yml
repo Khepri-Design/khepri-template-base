@@ -1,0 +1,38 @@
+title: Homepage
+
+options:
+  delete: false
+  duplicate: false
+
+sections:
+  entry:
+    type: fields
+    fields:
+      headerImage:
+        label: Headerbild
+        type: files
+        help: Wird als Hauptbild im Beitrag und als Beitragsvorschau genutzt
+        query: page.images
+        multiple: false
+        width: 1/3
+      heading:
+        label: Titel
+        help: Wird als Hauptüberschrift am Anfang der Startseite angezeigt
+        type: text
+        width: 1/3
+      subHeading:
+        label: Untertitel
+        help: Wird als Untertitel am Anfang der Startseite angezeigt
+        type: text
+        width: 1/3
+  content:
+    label: Inhalt
+    type: fields
+    fields:
+      layout:
+        extends: sections/pagebuilder
+  dataFiles:
+    label: Dateien
+    type: files
+    size: tiny
+    layout: cards

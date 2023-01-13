@@ -1,0 +1,43 @@
+{% block kd_blog_preview %}
+    {% block kd_blog_list %}
+        {% set blogPage = site.children.filterBy('intendedTemplate', 'blog-overview') %}
+        <div class="row">
+            {% if blogPage != '' %}
+                {% for blog in blogPage.children.listed.sortBy('date', 'desc').limit(3) %}
+                    {% block kd_blog_item %}
+                        <div class="col-xl-4 col-lg-6 kd-blog-item">
+                            <div class="kd-card kd-round kd-mouseover-grow mb-4" data-aos="flip-left">
+                                <a class="kd-href" href="{{ blog.url }}">
+                                    {% block kd_blog_img %}
+                                        <figure>
+                                            {% set blogImage = blog.blogImg.toFile %}
+                                            {% if blogImage != '' %}<img class="kd-round-top kd-card-image" height="100%" width="100%" loading="lazy" src="{{ blogImage.url }}" alt="{{ blogImage.name }}">{% endif %}
+                                            <div class="kd-card-body">
+                                                <figcaption class="kd-card-title kd-text-primary kd-text-md kd-text-heavy">{{ blog.customTitle }}</figcaption>
+                                                <hr class="mb-4 kd-divider">
+                                                <p class="kd-blog-teasertext">{{ blog.teaserText }} [...]</p>
+                                                <small>{{ blog.date.toDate('d.m.Y') }}</small>
+                                            </div>
+                                        </figure>
+                                    {% endblock %}
+                                </a>
+                            </div>
+                        </div>
+                    {% endblock %}
+                {% endfor %}
+            {% endif %}
+        </div>
+    {% endblock %}
+
+    {% set buttonText = 'alle Blogbeiträge' %}
+    {% block kd_button_all %}
+        {% set blogPage = site.children.filterBy('intendedTemplate', 'blog-overview') %}
+        {% if blogPage != '' %}
+            <div class="row">
+                <div class="d-flex justify-content-center">
+                    <a href="{{ site.children.filterBy('intendedTemplate', 'blog-overview').first.url }}" class="kd-btn kd-btn-primary kd-btn-blog-preview mt-5">{{ buttonText }}</a>
+                </div>
+            </div>
+        {% endif %}
+    {% endblock %}
+{% endblock %}

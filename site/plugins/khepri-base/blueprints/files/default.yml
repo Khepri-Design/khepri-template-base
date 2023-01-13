@@ -1,0 +1,10 @@
+
+sections:
+  bild:
+    type: fields
+    fields:
+      galleryCaption:
+        type: text
+        maxlength: 50
+        label: Bildbeschreibung für Gallery
+        help: Wird im Gallerymodus als Bildunterschrift angezeigt

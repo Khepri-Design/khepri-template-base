@@ -1,0 +1,14 @@
+<div class="row
+  {% if block.classes != '' %} {{ block.classes }} {% endif %}" 
+  {% if block.animation != '' %} data-aos="{{ block.animation }}" {% endif %} 
+  {% if block.color != '' %}style="background-color: {{ block.color }};"{% endif %}>
+  <div class="kd-check-list col-md-4 mt-3">
+    <div class="kd-check-item justify-content-center d-flex"><i class="fa-solid fa-check"></i>&nbsp;&nbsp;{{ block.checkOne }}</div>
+  </div>
+  <div class="kd-check-list col-md-4 mt-3">
+    <div class="kd-check-item justify-content-center d-flex"><i class="fa-solid fa-check"></i>&nbsp;&nbsp;{{ block.checkTwo }}</div>
+  </div>
+  <div class="kd-check-list col-md-4 mt-3">
+    <div class="kd-check-item justify-content-center d-flex"><i class="fa-solid fa-check"></i>&nbsp;&nbsp;{{ block.checkThree }}</div>
+  </div>
+</div>

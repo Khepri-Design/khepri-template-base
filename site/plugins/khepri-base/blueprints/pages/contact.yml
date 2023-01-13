@@ -1,0 +1,48 @@
+title: Kontakt
+
+tabs:
+  inhalt:
+    icon: text
+    sections:
+      form:
+        label: Formular
+        type: fields
+        fields:
+          mailRecipient:
+            type: text
+            label: Empfängermail
+            help: An diese Mail werden die Anfragen gesendet
+            placeholder: beispiel@mail.de
+            width: 1/3
+          displayName:
+            type: text
+            label: Anzeigename
+            help: Wird als Absender im Postfach angezeigt
+            placeholder: Meine Firma
+            width: 1/3
+          subjectPrefix:
+            type: text
+            label: Betreff-Prefix
+            help: Wird als Betreff gesetzt + angegebenen Betreff im Formular
+            placeholder: Neue Anfrage über das Kontaktformular
+            width: 1/3
+      content:
+        label: Inhalt
+        type: fields
+        fields:
+          layout:
+            extends: sections/pagebuilder
+      dataFiles:
+        label: Dateien
+        type: files
+        size: tiny
+        layout: cards
+
+  Meta-Daten:
+    extends: tabs/meta
+  Einstellungen:
+    extends: tabs/settings
+    fields:
+      otherSettings: false
+      structuredPage: false
+      needsLogin: false

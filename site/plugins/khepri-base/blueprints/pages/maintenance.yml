@@ -1,0 +1,6 @@
+sections:
+  maintenance:
+    type: info
+    label: "{{empty}}"
+    theme: info
+    text: Die Wartungsseite wird angezeigt, wenn der Wartungsmodus in den Grundeinstellungen aktiviert ist und kann im Standard nicht bearbeitet werden.<br>Die angezeigte E-Mail Adresse kann in den Grundeinstellungen abgeändert werden.

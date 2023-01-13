@@ -1,0 +1,48 @@
+name: Cardbox
+icon: tablet
+
+fields:
+  hasBorderRadius:
+    label: Kanten
+    type: toggles
+    default: round
+    options:
+      - value: round
+        text: Rund
+        icon: circle
+      - value: edgy
+        text: Eckig
+        icon: grid-full
+    width: 1/2
+  link:
+    label: Link
+    help: Verlinkung, wenn der Besucher auf die Card klickt
+    type: text
+    width: 1/2
+  blocks:
+    type: blocks
+    label: Inhalt
+    fieldsets:
+      - heading
+      - textadvanced
+      - image
+      - download
+      - list
+      - button
+      - hint
+      - spacer
+      - divider
+  color:
+    label: Hintergrundfarbe
+    type: colors
+    width: 1/2
+    help: Farbwert eintragens
+  classes:
+    label: Zusätzliche CSS-Klassen
+    help: z.B. "kd-round" oder "kd-container" (mehrere Klassen mit Leerzeichen trennen)
+    type: text
+    width: 1/2
+  animation:
+    help: z.B. "fade-in", "zoom-in" oder "slide-up"
+    type: text
+    width: 1/2

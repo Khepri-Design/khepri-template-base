@@ -1,0 +1,32 @@
+title: Impressum
+
+options:
+  delete: false
+  duplicate: false
+
+tabs:
+    
+  Impressums-daten:
+    icon: text
+    type: fields
+    fields:
+      customArea:
+        type: textarea
+        label: Zusatztext 1
+        width: 2/2
+      copyrigth:
+        type: toggle
+        label: Urheberrechtshinweis
+        width: 1/4
+      argument:
+        type: toggle
+        label: Online-Plattform zur Streitbeilegung
+        width: 1/4
+  Meta-Daten:
+    extends: tabs/meta
+  Einstellungen:
+    extends: tabs/settings
+    fields:
+      otherSettings: false
+      needsLogin: false
+      structuredPage: false

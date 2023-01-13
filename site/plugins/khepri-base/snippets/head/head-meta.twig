@@ -1,0 +1,73 @@
+{% block kd_meta %}
+  {% if site.url == page.url %}
+    {% if site.previewImg != null %}
+      {% set previewImage = site.previewImg.toFile %}
+    {% endif %}
+  {% else %}
+    {% if page.previewImg != null %}
+      {% set previewImage = page.previewImg.toFile %}
+    {% endif %}
+  {% endif %}
+
+  {% block kd_viewport %}
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+  {% endblock %}
+
+  {% block kd_canonical %}
+  <title>
+    {% if page.url == site.url %}
+      {{ site.shortDescription }}
+    {% else %}
+      {{ page.shortDescription != ''
+        ? page.shortDescription
+        : page.title }} 
+    {% endif %}
+        | {{ site.brandname }}
+    </title>
+    <link rel="canonical" href="{{ page.url }}" />
+  {% endblock %}
+
+  {% block kd_meta_base %}
+    <meta name="description"
+      content="
+      {{ page.description != ''
+        ? page.description
+        : site.description
+      }}" />
+    <meta name="robots"
+      content="{{ page.robots != '' ? page.robots : (site.robots != '' ? site.robots : 'index, follow') }}" />
+    <meta name="Author" content="{{ site.brandname }}" />
+    <meta name="Copyright" content="{{ site.brandname }}" />
+    <meta name="Page-Topic" content="{{ page.topics != '' ? page.topics : site.topics }}" />
+    {% if previewImage != '' %}
+      <meta name="thumbnail" content="{{ previewImage.url }}" />
+    {% endif %}
+  {% endblock %}
+
+  {% block kd_meta_og %}
+    <meta property="og:title"
+      content="{{ site.brandname }} | {{ page.shortDescription != ''
+        ? page.shortDescription
+        : site.shortDescription }}" />
+    <meta property="og:description"
+      content="{{
+      page.description != ''
+        ? page.description
+        : site.description
+      }}" />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ site.url }}" />
+    {% if previewImage != '' %}
+      <meta property="og:image" content="{{ previewImage.url }}" />
+    {% endif %}
+    <meta property="og:site_name"
+      content="{{ site.brandname }} | {{ page.shortDescription != ''
+        ? page.shortDescription
+        : site.shortDescription }}" />
+  {% endblock %}
+{% endblock %}

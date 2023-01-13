@@ -1,0 +1,23 @@
+{% block kd_page %}
+    {% if (page.needsLogin.isTrue and kirby.user) or page.needsLogin.isFalse %}
+        {{ snippet('head/head') }}
+        {{ snippet('navigation/navigation') }}
+            <div class="kd-main-container">
+                    {% block kd_page_content %}
+                        {% include '@plugins/khepri-base/elements/layout.twig' %}
+                    {% endblock %}
+                </div>
+            </div>
+        {{ snippet('footer/footer') }}
+    {% else %}
+        {% set goPage = page.id %}
+        {{ go("/login?go="~goPage) }}
+    {% endif %}
+    {% if page.structuredPage.isTrue %}
+        {% if page.haschildren %}
+            {{ go(page.children.first.url) }}
+        {% else %}
+            {{ go("/") }}
+        {% endif %}
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,82 @@
+.honeypot {
+    position: absolute;
+    left: -9999px;
+}
+
+.kd-success {
+    color: $kd-brand-color-primary;
+}
+
+.kd-form {
+    margin: 1.5rem 0;
+
+    .kd-field {
+        margin-bottom: 1rem;
+
+        input {
+            &:not(.kd-checkbox):not(.kd-btn) {
+                width: 100%;
+                border: none;
+                background-color: transparent;
+                border-bottom: 2px solid $kd-text-color-primary;
+            }
+
+
+            &:focus {
+                outline: none;
+                border-bottom: 2px solid $kd-brand-color-primary;
+            }
+
+            &::placeholder {
+                opacity: 0.4;
+            }
+        }
+
+        textarea {
+            width: 100%;
+            border-radius: 3px;
+            border: none;
+            background-color: transparent;
+            outline: 2px solid $kd-text-color-primary;
+            
+            &:focus {
+                border: none;
+                outline: 2px solid $kd-brand-color-primary;
+            }
+
+            &::placeholder {
+                opacity: 0.4;
+            }
+        }
+    }
+
+    .kd-alert {
+        margin-top: 0.3rem;
+        color: #eb5959;
+    }
+
+    .kd-abbreviation {
+        opacity: 0.5;
+    }
+}
+
+.kd-dropzone {
+  border: 2px dashed #ccc;
+  padding: 20px;
+  border-radius: 5px;
+
+  &:hover {
+    border-color: $kd-brand-color-primary;
+    background-color: #f2f2f2;
+    cursor: pointer;
+  }
+}
+
+.kd-dropzone.highlight {
+  border-color: $kd-brand-color-primary;
+  background-color: #f2f2f2;
+}
+
+.kd-file-remove {
+    color: #eb5959;
+}

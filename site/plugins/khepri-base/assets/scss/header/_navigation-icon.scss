@@ -1,0 +1,24 @@
+/*close / open Icon*/
+.mobile-nav-toggle .line {
+    transition: transform 0.15s ease-in 0.15s, rotate 0.15s ease-in, opacity 0s 0.15s;
+    transform-origin: center;
+    fill: currentColor;
+}
+
+.mobile-nav-toggle[aria-expanded="true"] .line {
+    transition: transform 0.15s ease-in, rotate 0.15s ease-in 0.15s, opacity 0s 0.15s;
+}
+
+.mobile-nav-toggle[aria-expanded="true"] .line.first {
+    transform: translateY(25px);
+    rotate: 45deg;
+}
+
+.mobile-nav-toggle[aria-expanded="true"] .line.second {
+    opacity: 0;
+}
+
+.mobile-nav-toggle[aria-expanded="true"] .line.third {
+    transform: translateY(-25px);
+    rotate: -45deg;
+}

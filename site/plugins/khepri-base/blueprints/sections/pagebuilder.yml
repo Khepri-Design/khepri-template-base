@@ -1,0 +1,159 @@
+label: Seiteninhalt
+type: layout
+layouts:
+  - "1/1"
+  - "1/2, 1/2"
+  - "1/3, 1/3, 1/3"
+  - "1/4, 2/4, 1/4"
+  - "1/3, 2/3"
+  - "2/3, 1/3"
+  - "1/2, 1/2, 1/2, 1/2"
+  - "1/1, 1/2, 1/2"
+  - "1/3, 2/3, 2/3, 1/3"
+  - "1/2, 1/2, 1/3, 1/3, 1/3"
+  - "1/4, 1/4, 1/4, 1/4"
+fieldsets:
+  text:
+    label: Text
+    type: group
+    fieldsets:
+      - heading
+      - textadvanced
+      - list
+      list:
+        extends: blocks/list
+        fields:
+          color:
+            label: Hintergrundfarbe
+            type: colors
+            width: 1/2
+            help: Farbwert eintragen
+          classes:
+            label: Zusätzliche CSS-Klassen
+            help: z.B. "kd-round" oder "kd-container" (mehrere Klassen mit Leerzeichen trennen)
+            type: text
+            width: 1/2
+          animation:
+            help: z.B. "fade-in", "zoom-in" oder "slide-up"
+            type: text
+            width: 1/2
+  design:
+    label: Design Elemente
+    type: group
+    fieldsets:
+      - button
+      - cardbox
+      - divider
+      - spacer
+      - hint
+      - checklist
+      - accordion
+  media:
+    label: Medien
+    type: group
+    fieldsets:
+      - image
+      - gallery
+      - video
+      - download
+      - iframe
+      - audio
+      image:
+        extends: blocks/image
+        fields:
+          imgLable:
+            label: Label auf Bild
+            type: text
+            width: 1/2
+            help: wird in der Ecke des Bildes als Label angezeigt
+          labelRounded:
+            label: runde Ecken (Label)
+            type: toggle
+            text: 
+              - nein
+              - ja
+            width: 1/2
+            help: Ecken des Labels werden gleichmäßig abgerunded
+          rounded:
+            label: runde Ecken
+            type: toggle
+            text: 
+              - nein
+              - ja
+            width: 1/2
+            help: Ecken des Bildes werden gleichmäßig abgerunded
+          color:
+            label: Hintergrundfarbe
+            type: colors
+            width: 1/2
+            help: Farbwert eintragen
+          classes:
+            label: Zusätzliche CSS-Klassen
+            help: z.B. "kd-round" oder "kd-container" (mehrere Klassen mit Leerzeichen trennen)
+            type: text
+            width: 1/2
+          animation:
+            help: z.B. "fade-in", "zoom-in" oder "slide-up"
+            type: text
+            width: 1/2
+      video:
+        extends: blocks/video
+        fields:
+          embed:
+            type: toggle
+            label: Video direkt einbinden (iFrame)
+            help: Stellt ein Datenschutzrisiko da, da die IP-Adresse des Users an Google weitergegeben wird, wenn auf das Video geklickt wird.
+            width: 1/2
+          color:
+            label: Hintergrundfarbe
+            type: colors
+            width: 1/2
+            help: Farbwert eintragen
+          classes:
+            label: Zusätzliche CSS-Klassen
+            help: z.B. "kd-round" oder "kd-container" (mehrere Klassen mit Leerzeichen trennen)
+            type: text
+            width: 1/2
+          animation:
+            help: z.B. "fade-in", "zoom-in" oder "slide-up"
+            type: text
+            width: 1/2
+  other:
+    label: Weitere Elemente
+    type: group
+    fieldsets:
+      - snippet
+      - hook
+settings:
+  fields:
+    fullWidth:
+      label: Volle Breite
+      help: Die Sektion erstreckt sich über die volle Breite der Seite
+      type: toggle
+      options:
+        - ja
+        - nein
+      width: 1/2
+    fullWidthBackground:
+      label: Volle Breite (nur Hintergrundfarbe)
+      help: Nur die Hintergrundfarbe erstreckt sich über die volle Breite der Seite
+      type: toggle
+      options:
+        - ja
+        - nein
+      width: 1/2
+    color:
+      label: Hintergrundfarbe
+      type: colors
+      width: 1/2
+      help: Farbwert eintragen
+    classes:
+      label: Zusätzliche CSS-Klassen
+      help: z.B. "kd-round" oder "kd-container" (mehrere Klassen mit Leerzeichen trennen)
+      type: text
+      width: 1/2
+    animation:
+      label: Animation
+      help: z.B. "fade-in", "zoom-in" oder "slide-up"
+      type: text
+      width: 1/2

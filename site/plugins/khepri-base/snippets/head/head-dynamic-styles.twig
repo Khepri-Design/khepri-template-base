@@ -1,0 +1,13 @@
+{% block kd_dynamic_styles %}
+    <style>
+        :root {
+            --kd-brand-color-primary: {{ site.primaryColor }};
+            --kd-brand-color-primary-contrast: {{ site.primaryColorContrast }};
+            --kd-brand-color-secondary: {{ site.secondaryColor }};
+            --kd-brand-color-secondary-contrast: {{ site.secondaryColorContrast }};
+            --kd-text-color-primary: {{ site.textColor }};
+            --kd-body-color: {{ site.bodyColor }};
+            --kd-border-radius: {{ site.borderRadius }};
+        }
+    </style>
+{% endblock %}

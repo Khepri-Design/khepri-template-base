@@ -1,0 +1,29 @@
+name: iframe
+title: PDF-Datei
+icon: document
+
+fields:
+  file:
+    type: files
+    label: PDF-Datei
+    multiply: false
+    help: Die ausgewählte PDF Datei wird auf der Seite ausgespielt
+    width: 1/2
+  customHeight:
+    type: text
+    label: Anzeigehöhe
+    placeholder: "Standard: 1000px"
+    help: definiert die Anzeigehöhe der PDF auf der Seite.
+    width: 1/2
+  buttonDownload:
+    type: toggle
+    label: Download-Button anzeigen
+    default: true
+    help: Vereinfacht dem Besucher das Herunterladen der PDF
+    width: 1/2
+  buttonPreview:
+    type: toggle
+    label: Link-Button anzeigen
+    default: true
+    help: Der Button verweist den Besucher auf die PDF-Datei in einem neuen Browsertab
+    width: 1/2

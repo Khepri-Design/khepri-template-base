@@ -1,0 +1,46 @@
+.kd-btn-blog-preview {
+  min-width: 25%;
+}
+
+.kd-btn {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 0.375rem 0.75rem;
+  border-radius: $kd-border-radius;
+  transition: 0.25s;
+}
+
+a.kd-btn {
+  text-decoration: none;
+}
+
+.kd-btn-primary {
+  background-color: $kd-brand-color-primary;
+  color: $kd-text-color-white;
+  border: 3px solid transparent;
+  white-space: normal;
+
+    &:hover {
+      background-color: $kd-brand-color-primary-contrast;
+      color: $kd-text-color-white;
+    }
+}
+
+.kd-btn-secondary {
+  background-color: $kd-brand-color-secondary;
+  color: $kd-text-color-white;
+  border: 3px solid transparent;
+
+    &:hover {
+      background-color: $kd-brand-color-secondary-contrast;
+      color: $kd-text-color-white;
+    }
+}

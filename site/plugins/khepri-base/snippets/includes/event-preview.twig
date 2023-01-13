@@ -1,0 +1,80 @@
+{% block kd_event_preview %}
+    {% set currentTime = date().getTimestamp %}
+    {% set eventsSorted = site.children.filterBy('intendedTemplate', 'event-overview').children.listed.sortBy('dateTime', 'asc') %}
+    {% set nextEvent = '' %}
+    {% for eventSorted in eventsSorted %}
+        {% if eventSorted.dateTime.toTimeStamp > currentTime %}
+            {% if nextEvent == '' %}
+                {% set nextEvent = eventSorted %}
+            {% endif %}
+        {% endif %}    
+    {% endfor %}
+    {% if nextEvent != '' %}
+        <div class="d-flex flex-wrap" id="eventCountdown" data-dateTime="{{ nextEvent.dateTime }}">
+            {% block kd_event_left %}
+                <div class="col-lg-6 col-12 kd-event-preview-left kd-round-left">
+                    <div class="kd-event-preview-next"><strong>Nächste Veranstaltung</strong></div>
+                    <div class="kd-event-preview-title"><span>{{ nextEvent.customTitle }}</span></div>
+                    {% set buttonText = 'mehr Erfahren' %}
+                        <div class="row kd-event-data-list d-none d-lg-flex">
+                        <div class="col-lg-4 kd-event-data">
+                            <div class="kd-round row">
+                                <div class="col-2">
+                                    <i class="fa-solid fa-calendar"></i>
+                                </div>
+                                <div class="col-10">
+                                    <div>{{ nextEvent.dateTime | date('d.m.Y') }}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 kd-event-data">
+                            <div class="kd-round row">
+                                <div class="col-2">
+                                    <i class="fa-solid fa-clock"></i>
+                                </div>
+                                <div class="col-10">
+                                    <div>{{ nextEvent.dateTime | date('H:i') }} Uhr</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 kd-event-data">
+                            <div class="kd-round row">
+                                <div class="col-2">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div class="col-10">
+                                    <div>{{ nextEvent.location }}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% block kd_button_details %}
+                        <div class="row justify-content-center">
+                            <div class="d-flex justify-content-center" data-aos="flip-left">
+                                <a href="{{ nextEvent.url }}" class="kd-btn kd-btn-primary">{{ buttonText }}</a>
+                            </div>
+                        </div>
+                    {% endblock %}
+                </div>
+            {% endblock %}
+            {% block kd_event_right %}
+                <div class="col-lg-6 col-12 kd-event-preview-right kd-round-right d-flex justify-content-center align-items-center" style="background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('{{ nextEvent.eventImg.toFile.url }}');">
+                    <div class="kd-counter">
+                        <div class="col-md-2 col-12 kd-counter-box kd-round" data-aos="zoom-in">
+                            <div class="kd-counter-unity-days-count">0</div><div class="kd-counter-unity-days">Tage</div>
+                        </div>
+                        <div class="col-md-2 col-12 kd-counter-box kd-round" data-aos="zoom-in">
+                            <div class="kd-counter-unity-hours-count">0</div><div class="kd-counter-unity-hours">Stunden</div>
+                        </div>
+                        <div class="col-md-2 col-12 kd-counter-box kd-round" data-aos="zoom-in">
+                            <div class="kd-counter-unity-minutes-count">0</div><div class="kd-counter-unity-minutes">Minuten</div>
+                        </div>
+                        <div class="col-md-2 col-12 kd-counter-box kd-round" data-aos="zoom-in">
+                            <div class="kd-counter-unity-seconds-count">0</div><div class="kd-counter-unity-seconds">Sekunden</div>
+                        </div>
+                    </div>
+                </div>
+            {% endblock %}
+        </div>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,67 @@
+//font
+$khepri-brand-color-primary: #e3a562;
+$khepri-brand-color-secondary: #ffebd4;
+$khepri-brand-color-highlight: #f4f6f8;
+$khepri-text-color: #23272b;
+
+.k-text {
+    font-size: 1rem;
+}
+
+.k-headline {
+    font-size: 1.5rem;
+}
+
+.k-header {
+    &::before {
+        float: right;
+        content: '';
+        width: 20%;
+        height: 85px;
+        background-image: url('../../assets/img/logo-khepri-text-dark.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        clear: right;
+    }
+}
+
+.k-field-name-email {
+    .k-field-label {
+        &::before {
+            float: left;
+            content: '';
+            width: 100%;
+            height: 100px;
+            margin-top: -150px;
+            background-image: url('../../assets/img/logo-khepri-text-dark.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            clear: right;
+        }
+    }
+}
+
+.k-topbar,
+.k-registration,
+.k-topbar-signals,
+.k-topbar-wrapper::after {
+    background-color: $khepri-text-color;
+}
+
+.k-tabs {
+    a {
+        &[aria-current='true'] {
+            border-top: 2px solid $khepri-brand-color-primary;
+        }
+    }
+}
+
+.k-button-group {
+    &.k-prev-next {
+        display: none;
+    }
+}
+
+.k-tab-button[aria-current]::before {
+    background: transparent;
+}

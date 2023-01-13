@@ -1,0 +1,15 @@
+{% block kd_home %}
+    {{ snippet('head/head') }}
+
+        {{ snippet('navigation/navigation') }}
+        {% block kd_home_entry %}
+            {{ snippet('includes/entry') }}
+        {% endblock %}
+        <div class="mt-5">
+            {% block kd_home_content %}
+                {% include '@plugins/khepri-base/elements/layout.twig' %}
+            {% endblock %}
+        </div>
+
+    {{ snippet('footer/footer') }}
+{% endblock %}

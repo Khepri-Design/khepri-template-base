@@ -1,0 +1,295 @@
+title: Khepri Website Backend
+
+tabs:
+  content:
+    label: Seiten / Inhalte
+    icon: text
+    sections:
+      support:
+        type: fields
+        fields:
+          supportMail:
+            type: info
+            theme: none
+            label: "Hi {{ kirby.user.username }}!"
+            text: "<i>Der beste Weg, die Zukunft vorherzusagen , ist, sie zu erschaffen.</i><br><br>Eine Dokumentation über diese Administration findest du (link: https://docs.khepri.design/ target: _blank text: hier) - Informationen zu neuen Features und Updates findest du (link: https://khepri.design/webdesign/changelog target: _blank text: hier)<br>Bei Fragen oder Problemen, wende dich gerne an (link: mailto:support@khepri.design text: support@khepri.design). In der Regel erhälst du innerhalb von 48 Stunden eine Rückmeldung"
+      pages:
+        type: pages
+        label: Seiten
+        layout: cards
+        image:            
+          cover: true
+        template:
+          - home
+          - page
+          - page-heading
+          - blog-item
+          - blog-overview
+          - event-item
+          - event-overview
+          - impressum
+          - datenschutz
+          - contact
+          - link
+        create:
+          - page
+          - page-heading
+          - link
+          - blog-item
+          - blog-overview
+          - event-item
+          - event-overview
+          - contact
+      intern:
+        type: fields
+        fields:
+          internInfo:
+            type: textarea
+            label: Interne Notizen
+            
+      version:
+        type: fields
+        fields:
+          versionNumber:
+            type: info
+            theme: none
+            label: ""
+            text: "© Copyright 2022 Khepri Design - v{{kirby.plugin('khepri-design/khepri-base').version}}"
+
+  design:
+    label: Design
+    icon: brush
+    sections:
+      design:
+        type: fields
+        fields:
+          logoImg:
+            label: Firmenlogo
+            type: files
+            help: Wird im Header und Footer angezeigt
+            query: site.images
+            multiple: false
+            width: 1/1
+          primaryColor:
+            type: colors
+            label: Primär-Farbe
+            help: Primäre Firmenfarbe
+            width: 1/2
+          secondaryColor:
+            type: colors
+            label: Sekundär-Farbe
+            help: Sekundäre Firmenfarbe
+            width: 1/2
+          primaryColorContrast:
+            type: colors
+            label: Primär-Kontrastfarbe
+            help: zum Beispiel für Hover-Effekte auf Buttons
+            width: 1/2
+          secondaryColorContrast:
+            type: colors
+            label: Sekundär-Kontrastfarbe
+            help: zum Beispiel für Hover-Effekte auf Buttons
+            width: 1/2
+          textColor:
+            type: colors
+            label: Text-Farbe
+            help: Farbe für Fließtexte
+            width: 1/3
+          bodyColor:
+            type: colors
+            label: Hintegrundfarbe
+            help: Wird als Hintergrundfarbe für die Website verwendet
+            width: 1/3
+          borderRadius:
+            type: text
+            label: Ecken-Rundung
+            help: betrifft Buttons, Boxen und andere Elemente
+            placeholder: 0px
+            width: 1/3
+          line:
+            type: line
+          footerSectionOneHeading:
+            type: text
+            label: Überschrift Footerspalte 1
+            width: 1/3
+          footerSectionTwoHeading:
+            type: text
+            label: Überschrift Footerspalte 2
+            width: 1/3
+          footerSectionThreeHeading:
+            type: text
+            label: Überschrift Footerspalte 3
+            width: 1/3
+          serviceNavigation:
+            type: toggle
+            label: 3. Footerspalte in Copyright-Leiste anzeigen
+            width: 1/2
+          footerDescription:
+            type: textarea
+            label: Footer-Beschreibung
+            help: Wird am Ende der Seite (Footer) angezeigt
+            width: 1/2
+  
+  socialMedia:
+    label: Social Media
+    icon: chart
+    fields:
+      socialLinks:
+        type: blocks
+        label: Profile hinzufügen
+        fieldsets:
+          instagram:
+            name: Instagram
+            icon: instagram
+            extends: sections/socialmedia
+            fields:
+              socialIcon:
+                default: instagram
+          twitter:
+            name: Twitter
+            icon: twitter
+            extends: sections/socialmedia
+            fields:
+              socialIcon:
+                default: twitter
+          facebook:
+            name: Facebook
+            icon: facebook
+            extends: sections/socialmedia
+            fields:
+              socialIcon:
+                default: facebook
+          pinterest:
+            name: Pinterest
+            icon: pinterest
+            extends: sections/socialmedia
+            fields:
+              socialIcon:
+                default: pinterest
+          discord:
+            name: Discord
+            icon: discord
+            extends: sections/socialmedia
+            fields:
+              socialIcon:
+                default: discord
+          tiktok:
+            name: TikTok
+            icon: tiktok
+            extends: sections/socialmedia
+            fields:
+              socialIcon:
+                default: tiktok
+          youtube:
+            name: YouTube
+            icon: youtube
+            extends: sections/socialmedia
+            fields:
+              socialIcon:
+                default: youtube
+          linkedin:
+            name: LinkedIn
+            icon: linkedin
+            extends: sections/socialmedia
+            fields:
+              socialIcon:
+                default: linkedin
+          whatsapp:
+            name: Whatsapp
+            icon: whatsapp
+            extends: sections/socialmedia
+            fields:
+              socialIcon:
+                default: whatsapp
+          email:
+            name: E-Mail
+            icon: email
+            extends: sections/socialmedia
+            fields:
+              link:
+                label: E-Mail
+                icon: email
+              socialIcon:
+                default: square-envelope
+          phone:
+            name: Telefon
+            icon: phone
+            extends: sections/socialmedia
+            fields:
+              link:
+                label: Telefonnummer
+                icon: phone
+              socialIcon:
+                default: square-phone
+          others:
+            name: Anderes
+            icon: url
+            extends: sections/socialmedia
+            fields:
+              socialIcon:
+                default: link
+
+  settings:
+    label: Grundeinstellungen
+    icon: cog
+    sections:
+      settings-1:
+        type: fields
+        fields:
+          maintenance:
+            type: toggle
+            label: Wartungsmodus
+            width: 1/2
+            help: Zeigt dem Besucher eine Wartungsseite beim Besuchen der Seite
+          showHomepageInNavigation:
+            type: toggle
+            label: Startseite in Navigation zeigen
+            width: 1/2
+            help: Die Startseite wird als erste Position im Hauptmenü angezeigt
+      settings-2:
+        type: fields
+        fields:
+          brandName:
+            type: text
+            label: Firmennamen
+            help: wird im Browsertab und in META-Informationen verwendet
+            width: 1/2
+          contactMail:
+            type: text
+            label: Kontakt E-Mail
+            help: wird zum Beispiel auf der Wartungsseite als Kontaktmöglichkeit verwendet
+            width: 1/2
+          robots:
+            type: text
+            label: Robotstag
+            help: z.B "index, follow"
+            width: 1/2
+          topics:
+            type: text
+            label: Thema der Seite
+            help: hilft Google beim Interpretieren der Seite (z.B. Autos, Reparaturen, Werkstatt)
+            width: 1/2
+          previewImg:
+            type: files
+            label: Vorschaubild
+            help: Wird in Suchergebnissen angezeigt oder als Vorschau beim Teilen des Links (z.B. via Whatsapp)
+            multiple: false
+          shortDescription:
+            type: textarea
+            label: Kurzbeschreibung
+            help: wird im Browsertab angezeigt
+            width: 1/2
+          description:
+            type: textarea
+            label: Beschreibung
+            help: wird in Google-Suchergebnissen angezeigt
+            width: 1/2
+
+  files:
+    label: Dateien / Bilder
+    icon: image
+    sections:
+      dateien:
+        type: filesdisplay
+        layout: cards
+        query: site.index.files

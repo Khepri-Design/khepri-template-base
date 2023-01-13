@@ -1,0 +1,39 @@
+{% block kd_client_login %}
+    {{ snippet('head/head') }}
+
+    {{ snippet('navigation/navigation') }}
+        <div class="kd-main-container">
+            <div class="kd-container">
+                <h1 class="kd-heading justify-content-center d-flex text-center">Anmeldung</h1>
+                <hr class="mt-3 mb-3 kd-divider">
+                <div class="mt-5">
+                    <p class="text-center">Diese Seite steht nur angemeldeten Benutzern zur Verfügung.</p>
+                    <form method="post" action="{{ page.url }}" class="kd-form">
+                        <div class="row d-flex justify-content-center">
+                            <div class="honeypot">
+                                <label for="website">Website <abbr title="required">*</abbr></label>
+                                <input type="url" id="website" name="website" tabindex="-1">
+                            </div>
+                            <div class="d-none">
+                                <input type="text" type="hidden" id="go" name="go" value="{{ get('go') ? esc(get('go'), 'attr') : '' }}">
+                            </div>
+                            <div class="col-md-4 kd-field kd-field-login">
+                                <input type="email" id="email" name="email" placeholder="E-Mail" value="{{ get('email') ? esc(get('email'), 'attr') : '' }}">
+                            </div>
+                            <div class="col-md-4 kd-field kd-field-login">
+                                <input type="password" id="password" name="password" placeholder="Passwort" value="{{ get('password') ? esc(get('password'), 'attr') : '' }}">
+                            </div>
+                            <div class="col-md-6 d-flex justify-content-center kd-field mt-4">
+                                <input class="kd-btn kd-btn-primary kd-mouseover-pointer" type="submit" name="login" value="{{ page.button }}">
+                            </div>
+                            <p class="text-center">oder <a class="kd-underlined" href="{{ site.url }}">zurück zur Startseite</a></p>
+                        </div>
+                    </form>
+                    {% if error == "true" %}
+                        <div class="alert text-center" style="color: #eb5959">{{ page.alert }}</div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    {{ snippet('footer/footer') }}
+{% endblock %}

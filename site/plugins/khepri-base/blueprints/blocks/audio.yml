@@ -1,0 +1,41 @@
+name: Audio
+icon: file-audio
+
+fields:
+  source:
+    type: files
+    query: page.audio.template('files')
+    uploads: audio
+    multiple: false
+    width: 1/2
+  autoplay:
+    type: toggle
+    text: autoplay
+    width: 1/2
+    default: false
+  title:
+    label: Titel
+    type: text
+    marks:
+      - bold
+      - italic
+  description:
+    label: Beschreibung
+    type: text
+    marks:
+      - bold
+      - italic
+  color:
+    label: Hintergrundfarbe
+    type: colors
+    width: 1/2
+    help: Farbwert eintragens
+  classes:
+    label: Zusätzliche CSS-Klassen
+    help: z.B. "kd-round" oder "kd-container" (mehrere Klassen mit Leerzeichen trennen)
+    type: text
+    width: 1/2
+  animation:
+    help: z.B. "fade-in", "zoom-in" oder "slide-up"
+    type: text
+    width: 1/2

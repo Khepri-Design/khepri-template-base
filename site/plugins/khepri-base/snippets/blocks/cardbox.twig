@@ -1,0 +1,11 @@
+
+{% if block.link != '' %}<a{% else %}<div{% endif %} class="kd-card {% if block.hasBorderRadius == 'round' %}kd-round{% endif %} kd-href 
+  {% if block.link != '' %}kd-mouseover-grow{% endif %}  
+  {% if block.classes != '' %}{{ block.classes }}{% endif %}"
+  {% if block.link != '' %}href="{{ block.link }}"{% endif %}
+  {% if block.animation != '' %} data-aos="{{ block.animation }}" {% endif %} 
+  {% if block.color != '' %}style="background-color: {{ block.color }}"{% endif %}>
+  <div class="kd-card-body">
+    {{ block.blocks.toBlocks | raw }}  
+  </div>
+{% if block.link != '' %}</a>{% else %}</div>{% endif %}

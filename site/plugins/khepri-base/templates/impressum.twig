@@ -1,0 +1,22 @@
+{% block kd_impressum %}
+    {{ snippet('head/head') }}
+
+        {{ snippet('navigation/navigation') }}
+        <div class="kd-main-container kd-container">
+            <div class="column">
+                <h1 class="kd-heading justify-content-center d-flex text-center">Impressum</h1>
+                <hr class="mt-3 mb-3 kd-divider">
+            </div>
+            {% if page.customArea %}{{ page.customArea.kt | raw }}<br>{% endif %}
+            {% if page.copyrigth.isTrue %}<br><div class="text-center"><strong>Urheberrecht</strong></div><br>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.<br><br>
+            Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.
+            <br><br>
+            {% endif %}
+            {% if page.argument.isTrue %}<div class="text-center"><strong>Online-Plattform zur Streitbeilegung</strong></div><br>
+            Die EU-Kommission stellt unter dem Link https://ec.europa.eu/odr eine Online-Plattform zur Streitbeilegung ("OS-Plattform") zur Verfügung.<br><br>Sofern der Kunde ein in der europäischen Union wohnhafter Verbraucher ist, besteht die Möglichkeit, zur außergerichtlichen Beilegung von Streitigkeiten über vertragliche Verpflichtungen aus Online-Kaufverträgen diese Plattform zu nutzen.<br><br>Wir sind verpflichtet, Sie über die Existenz dieser OS-Plattform zu informieren.
+            <br><br>
+            {% endif %}
+        </div>
+        
+    {{ snippet('footer/footer') }}
+{% endblock %}

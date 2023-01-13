@@ -1,0 +1,100 @@
+Title: Startseite
+
+----
+
+Headerimage: - file://Rz6CsQR33UbYgtep
+
+----
+
+Heading: So kann deine Website aussehen!
+
+----
+
+Subheading: Demo Template
+
+----
+
+Layout: 
+
+----
+
+Datafiles: 
+
+----
+
+Aboutheading: Lorem Ipsum dolor sit amet
+
+----
+
+Aboutheadingsecondary: Lorem Ipsum dolor sit amet
+
+----
+
+Aboutimage: - about-img.png
+
+----
+
+Abouttext:
+
+**Lorem ipsum dolor sit amet**
+*consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos *et accusam et justo duo dolores et ea rebum. Stet clit.
+
+----
+
+Aboutlable: Lorem Ipsum
+
+----
+
+Cardsheading: gut - schnell - einfach
+
+----
+
+Carddesignheading: Design
+
+----
+
+Cardseoheading: SEO
+
+----
+
+Cardadminheading: Admin
+
+----
+
+Carddesigntext: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+
+----
+
+Cardseotext: At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.
+
+----
+
+Cardadmintext: Ut labore et dolore magna aliquyam erat, sed diam voluptua
+
+----
+
+Image: home/header-img.jpg
+
+----
+
+Cardresponsiveheading: Lorem Ipsum
+
+----
+
+Cardresponsivetext: Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet
+
+----
+
+Shortdescription: 
+
+----
+
+Description: Beschreibung Platzhalter
+
+----
+
+Robots: 
+
+----
+
+Uuid: 6OyNgvfdw35EUwBa

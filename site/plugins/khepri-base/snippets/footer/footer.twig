@@ -1,0 +1,100 @@
+{% block kd_footer %}
+    <footer class="footer">
+        {% if site.maintenance.isFalse %}
+            {% block kd_footer_top %}
+                {% set footerBgFile = 'assets/img/static/footer-bg.png' %}
+                {% set footerBgFilePlaceholder = 'media/plugins/khepri-design/khepri-base/img/placeholder/footer-bg.png' %}
+                <div class="footer-top" style="background:#fff url({{ site.url }}/{{ footerBgFile is existing file ? footerBgFile : footerBgFilePlaceholder }}) no-repeat right top; background-size: contain">
+                    <div class="kd-container">
+                        <div class="row gy-4">
+                            {% block kd_footer_info %}
+                                <div class="col-lg-4 col-12 footer-info">
+                                    <div class="d-flex align-items-center justify-content-center kd-footer-logo">
+                                        {% set logoImage = site.logoImg.toFile %}
+                                        <img loading="lazy" src="{{ logoImage != '' ? logoImage.url : "media/plugins/khepri-design/khepri-base/img/placeholder/logo.svg" }}" alt="{{site.brandname }} Logo" style="max-width: 300px"/>
+                                    </div>
+                                    <p>{{ site.footerDescription.kt | raw }}</p>
+                                    {{ snippet('footer/socialmedia') }}
+                                </div>
+                            {% endblock %}
+
+                            {% block kd_footer_column_1 %}
+                                <div class="{% if site.serviceNavigation.isFalse %}col-lg-3{% else %}col-lg-4 d-flex   {% endif %} col-sm-6 col-12 footer-links">
+                                    <div>
+                                        <h4>{{ site.footerSectionOneHeading }}</h4>
+                                        <ul>
+                                        {% for listingItem in site.children.listed %}
+                                            {% if listingItem.footerNavigationOne.isTrue and listingItem.structuredPage.isFalse %}
+                                                <li><i class="fa-solid fa-arrow-right"></i>&nbsp;<a href="{% if listingItem.customurl != '' %}{{ listingItem.customurl }}{% else %}{{ listingItem.url }}{% endif %}" {% if listingItem.newTab.isTrue %}target="_blank"{% endif %}>{{ listingItem.title }}</a></li>                                    
+                                            {% endif %}
+                                            {% if listingItem.hasListedChildren %}
+                                                {% for listingItemChild in listingItem.children.listed %}
+                                                    {% if listingItemChild.footerNavigationOne.isTrue %}
+                                                        <li><i class="fa-solid fa-arrow-right"></i>&nbsp;<a href="{% if listingItemChild.customurl != '' %}{{ listingItemChild.customurl }}{% else %}{{ listingItemChild.url }}{% endif %}" {% if listingItem.newTab.isTrue %}target="_blank"{% endif %}>{{ listingItemChild.title }}</a></li>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            {% endif %}
+                                        {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            {% endblock %}
+
+                            {% block kd_footer_column_2 %}
+                                <div class="{% if site.serviceNavigation.isFalse %}col-lg-3 d-flex{% else %}col-lg-4 d-flex{% endif %} col-sm-6 col-12 footer-links">
+                                    <div>
+                                        <h4>{{ site.footerSectionTwoHeading }}</h4>
+                                        <ul>
+                                        {% for listingItem in site.children.listed %}
+                                            {% if listingItem.footerNavigationTwo.isTrue and listingItem.structuredPage.isFalse %}
+                                                <li><i class="fa-solid fa-arrow-right"></i>&nbsp;<a href="{% if listingItem.customurl != '' %}{{ listingItem.customurl }}{% else %}{{ listingItem.url }}{% endif %}" {% if listingItem.newTab.isTrue %}target="_blank"{% endif %}>{{ listingItem.title }}</a></li>
+                                            {% endif %}
+                                            {% if listingItem.hasListedChildren %}
+                                                    {% for listingItemChild in listingItem.children.listed %}
+                                                        {% if listingItemChild.footerNavigationTwo.isTrue %}
+                                                            <li><i class="fa-solid fa-arrow-right"></i>&nbsp;<a href="{% if listingItemChild.customurl != '' %}{{ listingItemChild.customurl }}{% else %}{{ listingItemChild.url }}{% endif %}" {% if listingItem.newTab.isTrue %}target="_blank"{% endif %}>{{ listingItemChild.title }}</a></li>
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                {% endif %}
+                                        {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            {% endblock %}
+
+                            {% block kd_footer_column_3 %}
+                                {% if site.serviceNavigation.isFalse %}
+                                    <div class="col-lg-2 col-sm-6 col-12 footer-links">
+                                        <h4>{{ site.footerSectionThreeHeading }}</h4>
+                                        <ul>
+                                        {% for listingItem in site.children.listed %}
+                                            {% if listingItem.footerNavigationThree.isTrue and listingItem.structuredPage.isFalse %}
+                                                <li><i class="fa-solid fa-arrow-right"></i>&nbsp;<a href="{% if listingItem.customurl != '' %}{{ listingItem.customurl }}{% else %}{{ listingItem.url }}{% endif %}" {% if listingItem.newTab.isTrue %}target="_blank"{% endif %}>{{ listingItem.title }}</a></li>
+                                            {% endif %}
+                                            {% if listingItem.hasListedChildren %}
+                                                {% for listingItemChild in listingItem.children.listed %}
+                                                    {% if listingItemChild.footerNavigationThree.isTrue %}
+                                                        <li><i class="fa-solid fa-arrow-right"></i>&nbsp;<a href="{% if listingItemChild.customurl != '' %}{{ listingItemChild.customurl }}{% else %}{{ listingItemChild.url }}{% endif %}" {% if listingItem.newTab.isTrue %}target="_blank"{% endif %}>{{ listingItemChild.title }}</a></li>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            {% endif %}
+                                        {% endfor %}
+                                        </ul>
+                                    </div>
+                                {% endif %}
+                            {% endblock %}
+
+                        </div>
+                    </div>
+                </div>
+            {% endblock %}
+        {% endif %}
+        {{ snippet('footer/back-to-top') }}
+        {{ snippet('footer/copyright-credits') }}
+    </footer>
+        {% block kd_footer_js %}
+            {{ js('media/plugins/khepri-design/khepri-base/js/min/all.min.js') }}
+        {% endblock %}
+    </body>
+    </html>
+{% endblock %}

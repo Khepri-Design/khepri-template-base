@@ -1,0 +1,9 @@
+.kd-check-item {
+  display: inline-flex;
+
+  i {
+  color: $kd-brand-color-primary;
+    display: flex;
+    align-items: center;  
+  }
+}

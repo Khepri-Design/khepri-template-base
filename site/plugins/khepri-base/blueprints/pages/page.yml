@@ -1,0 +1,45 @@
+title: Seite
+
+tabs:
+  inhalt:
+    icon: text
+    sections:
+      pages:
+        type: pages
+        label: Unterseiten
+        layout: list
+        create:
+          page
+          page-heading
+          link
+          blog-item
+          blog-overview
+          event-item
+          event-overview
+          contact
+      content:
+        label: Inhalt
+        type: fields
+        fields:
+          layout:
+            extends: sections/pagebuilder
+      dataFiles:
+        label: Dateien
+        type: files
+        size: tiny
+        layout: cards
+
+  Meta-Daten:
+    extends: tabs/meta
+  Einstellungen:
+    extends: tabs/settings
+    fields:
+      footerNavigationOne: true
+        when:
+          structuredPage: false
+      footerNavigationTwo: true
+        when:
+          structuredPage: false
+      footerNavigationThree: true
+        when:
+          structuredPage: false

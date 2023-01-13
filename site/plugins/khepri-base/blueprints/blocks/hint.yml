@@ -1,0 +1,33 @@
+name: hint
+title: Hinweis
+icon: alert
+
+fields:
+  text:
+    type: textarea
+    label: Hinweistext
+    width: 1/2
+  rounded:
+    type: toggle
+    label: Ecken abrunden
+    default: true
+    width: 1/2
+  backgroundColor:
+    type: colors
+    default: '#eb5959'
+    label: Hintergrundfarbe
+    width: 1/2
+  textColor:
+    type: colors
+    default: '#fff'
+    label: Textfarbe
+    width: 1/2
+  classes:
+    label: Zusätzliche CSS-Klassen
+    help: z.B. "kd-round" oder "kd-container" (mehrere Klassen mit Leerzeichen trennen)
+    type: text
+    width: 1/2
+  animation:
+    help: z.B. "fade-in", "zoom-in" oder "slide-up"
+    type: text
+    width: 1/2

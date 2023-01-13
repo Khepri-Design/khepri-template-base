@@ -1,0 +1,44 @@
+label: Konfiguration
+icon: cog
+fields:
+  menuSettings:
+    type: headline
+    label: Menü-Zuweisung
+    numbered: false
+  footerNotAvailable:
+    type: info
+    label: ""
+    text: "**Seite kann nicht im Footer angezeigt werden, da sie als 'Strukturseite' eingestellt ist.**"
+    when:
+      structuredPage: true
+  mainNavigation:
+    type: toggle
+    label: Hauptnavigation
+    default: true
+    width: 1/4
+  footerNavigationOne:
+    type: toggle
+    label: "{{ site.footerSectionOneHeading.upper }} (Footerspalte 1)"
+    width: 1/4
+  footerNavigationTwo:
+    type: toggle
+    label: "{{ site.footerSectionTwoHeading.upper }} (Footerspalte 2)"
+    width: 1/4
+  footerNavigationThree:
+    type: toggle
+    label: "{{ site.footerSectionThreeHeading.upper }} (Footerspalte 3)"
+    width: 1/4
+  otherSettings:
+    type: headline
+    label: Sonstiges
+    numbered: false
+  structuredPage:
+    type: toggle
+    label: Strukturseite
+    help: Seite ist nicht mehr direkt erreichbar sondern dient als strukturierung für Unterseiten. 
+    width: 1/4
+  needsLogin:
+    type: toggle
+    label: Seite nur für angemeldete Benutzer zeigen 
+    help: Der Administrator ist auf der Seite automatisch eingeloggt. Ein Benutzer für diese Seite kann in der Benutzerverwaltung als "Mitglied" angelegt werden.
+    width: 1/4

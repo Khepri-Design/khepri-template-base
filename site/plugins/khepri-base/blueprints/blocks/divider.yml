@@ -1,0 +1,36 @@
+name: Divider
+title: Trenner
+icon: divider
+
+fields:
+  dividerType:
+    type: toggles
+    label: Trennertyp
+    default: long
+    options:
+      - value: long
+        text: Volle Breite
+        icon: text-justify
+      - value: center
+        text: Mittig
+        icon: text-center
+    width: 2/4
+  useCustomColor:
+    type: toggle
+    label: färben
+    width: 1/4
+  customColor:
+    type: colors
+    label: ''
+    default: '{{ site.primaryColor }}'
+    width: 1/4
+
+  classes:
+    label: Zusätzliche CSS-Klassen
+    help: z.B. "kd-round" oder "kd-container" (mehrere Klassen mit Leerzeichen trennen)
+    type: text
+    width: 1/2
+  animation:
+    help: z.B. "fade-in", "zoom-in" oder "slide-up"
+    type: text
+    width: 1/2

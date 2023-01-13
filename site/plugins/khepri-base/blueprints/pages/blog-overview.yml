@@ -1,0 +1,30 @@
+title: Beitragsübersicht
+
+tabs:
+    
+  Inhalt:
+    icon: text
+    sections:
+      blogs:
+        label: Beiträge
+        type: pages
+        layout: cards
+        image: page.blogImg.toFile
+        sortBy: date desc
+        create:
+          blog-item
+      content:
+        label: Inhalt
+        type: fields
+        fields:
+          layout:
+            extends: sections/pagebuilder
+
+  Meta-Daten:
+    extends: tabs/meta
+  Einstellungen:
+    extends: tabs/settings
+    fields:
+      otherSettings: false
+      structuredPage: false
+      needsLogin: false

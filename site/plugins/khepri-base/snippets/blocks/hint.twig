@@ -1,0 +1,5 @@
+<div class="kd-hint kd-round text-center p-2 kd-reset-margin-bottom{% if block.classes != '' %} {{ block.classes }}{% endif %}" 
+{% if block.animation != '' %} data-aos="{{ block.animation }}" {% endif %}
+style="background-color:{{ block.backgroundColor }};color:{{ block.textColor }};">
+    {{ block.text.kt | raw }}
+</div>

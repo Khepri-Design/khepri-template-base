@@ -1,0 +1,54 @@
+{% block kd_blog_overview %}
+    {% if (page.needsLogin.isTrue and kirby.user) or page.needsLogin.isFalse %}
+        {{ snippet('head/head') }}
+            {{ snippet('navigation/navigation') }}
+            {% set blogs = page.children.listed %}
+            <div class="kd-main-container">
+                {% block kd_blog_overview_content %}
+                    {% include '@plugins/khepri-base/elements/layout.twig' %}
+                {% endblock %}
+                <div class="kd-container kd-overflow-visible">
+                    <div class="row">
+                        {% block kd_blog_list %}
+                            {% for blog in blogs.paginate(6).sortBy('date', 'desc') %}
+                                <div class="col-xl-4 col-lg-6 kd-blog-item">
+                                    <div class="kd-card kd-round kd-mouseover-grow mb-4">
+                                        <a class="kd-href" href="{{ blog.url }}">
+                                            <figure>
+                                            {% set blogImage = blog.blogImg.toFile %}
+                                                {% if blogImage %}<img class="kd-round-top kd-card-image" height="100%" width="100%" loading="lazy" src="{{ blogImage.url }}" alt="{{ blogImage.name }}">{% endif %}
+                                                <div class="kd-card-body">
+                                                    <figcaption class="kd-card-title kd-text-primary kd-text-md kd-text-heavy">{{ blog.customTitle }}</figcaption>
+                                                    <hr class="mb-4 kd-divider">
+                                                    <p class="kd-blog-teasertext">{% if blog.teaserText != '' %}{{ blog.teaserText }} [...]{% endif %}</p>
+                                                    <small>{{ blog.date.toDate('d.m.Y') }}</small>
+                                                </div>
+                                            </figure>
+                                        </a>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        {% endblock %}
+                    </div>
+                </div>
+
+                {% if blogs.pagination.hasPages %}
+                    <nav class="kd-navigation mb-4 d-flex justify-content-center">
+                        {% if blogs.pagination.hasPrevPage %}
+                            <div class="kd-underlined-hover"><a href="{{ blogs.pagination.prevPageURL }}"><i class="fa-solid fa-chevron-left"></i> neuere Beiträge</a></div>
+                        {% endif %}
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        {% if blogs.pagination.hasNextPage %}
+                            <div class="kd-underlined-hover"><a href="{{ blogs.pagination.nextPageURL }}">ältere Beiträge <i class="fa-solid fa-chevron-right"></i></a></div>
+                        {% endif %}
+                    </nav>
+                {% endif %}
+                
+            </div>
+
+        {{ snippet('footer/footer') }}
+    {% else %}
+        {% set goPage = page.id %}
+        {{ go("/login?go="~goPage) }}
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,29 @@
+{
+    "name": "khepri-design/khepri-base",
+    "description": "Khepri Design Base Extension",
+    "version": "3.8.8.1",
+    "license": "proprietary",
+    "keywords": [
+        "kirby",
+        "cms",
+        "webdesign",
+        "khepri-template",
+        "khepri-base"
+    ],
+    "authors": [
+        {
+            "name": "Timo Haas",
+            "email": "timo.haas@khepri.design",
+            "homepage": "https://khepri.design"
+        }
+    ],
+	"require": {
+		"getkirby/composer-installer": "^1.1"
+	},
+	"config": {
+		"optimize-autoloader": true,
+		"allow-plugins": {
+			"getkirby/composer-installer": true
+		}
+	}
+}

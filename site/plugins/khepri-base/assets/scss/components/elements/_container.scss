@@ -1,0 +1,51 @@
+.kd-container,
+.kd-container-large {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.kd-container {
+  @media (min-width: 576px) {
+      max-width: 540px;
+  }
+
+  @media (min-width: 768px) {
+      max-width: 720px;
+  }
+
+  @media (min-width: 992px) {
+      max-width: 960px;
+  }
+
+  @media (min-width: 1200px) {
+      max-width: 1350px;
+  }
+}
+
+.kd-container-large {
+  @media (min-width: 576px) {
+      max-width: 960px;
+  }
+
+  @media (min-width: 768px) {
+      max-width: 1350px;
+  }
+
+  @media (min-width: 992px) {
+      max-width: 1350px;
+  }
+
+  @media (min-width: 1200px) {
+      max-width: 1750px;
+  }
+}
+
+.kd-main-container {
+  padding-top: 7rem;
+  min-height: calc(100vh - 440px);
+}

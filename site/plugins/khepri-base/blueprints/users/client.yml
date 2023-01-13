@@ -1,0 +1,5 @@
+title: Mitglied
+description: Mitglieder haben Zugriff auf Passwortgeschützte Seiten aber nicht auf die Administration.
+permissions:
+  access:
+    panel: false

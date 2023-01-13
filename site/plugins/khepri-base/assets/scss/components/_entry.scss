@@ -1,0 +1,61 @@
+.kd-entry {
+  .kd-img-container {
+    width: 100%;
+    height: 35vw;
+    min-height: 550px;
+    filter: brightness(0.6);
+  }
+}
+
+.kd-entry-column {
+  .kd-container {
+      padding-top: 5rem;
+  }
+  
+  .kd-entry-heading-section {
+    .kd-entry-heading {
+      font-size: clamp(2.5rem, 5vw, 3rem);
+    }
+
+    .kd-entry-subheading {
+      color: $kd-brand-color-secondary;
+      font-family: "kd-font-handwritten";
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: bold;
+    }
+    @media screen and (max-width: $lg) {
+      margin-top: 1rem
+    }
+    
+    h1 {
+      @media screen and (max-width: $lg) {
+        text-align: center;
+      }
+    }
+
+    h2 {
+      @media screen and (max-width: $lg) {
+        text-align: center;
+      }
+    } 
+
+    .kd-btn-container {
+      @media screen and (max-width: $lg) {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+
+  .kd-entry-img-container {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .kd-entry-backgroundimg-container {
+    //loading placeholder-background
+    background-image: url('../../img/placeholder/entry-background.png');
+    background-size: cover
+  }
+}

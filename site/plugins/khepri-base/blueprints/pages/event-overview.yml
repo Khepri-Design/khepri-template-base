@@ -1,0 +1,37 @@
+title: Eventübersicht
+
+tabs:
+    
+  Inhalt:
+    icon: text
+    sections:
+      events:
+        label: Events
+        type: pages
+        image: page.eventImg.toFile
+        layout: table
+        columns:
+          customTitle:
+            label: Event-Name
+          dateTime:
+            label: Zeit
+          location:
+            label: Ort
+        create:
+          event-item
+        sortBy: dateTime asc
+      content:
+        label: Inhalt
+        type: fields
+        fields:
+          layout:
+            extends: sections/pagebuilder
+
+  Meta-Daten:
+    extends: tabs/meta
+  Einstellungen:
+    extends: tabs/settings
+    fields:
+      otherSettings: false
+      structuredPage: false
+      needsLogin: false

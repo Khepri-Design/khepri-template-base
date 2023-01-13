@@ -1,0 +1,49 @@
+{% block kd_image %}
+  {% set alt = block.alt %}
+  {% set caption = block.caption %}
+  {% set imgLable = block.imgLable %}
+  {% set imgRounded = block.rounded %}
+  {% set labelRounded = block.labelRounded %}
+  {% set crop = block.crop.isTrue %}
+  {% set link = block.link %}
+  {% set ratio = block.ratio.or('auto') %}
+  {% set src = null %}
+
+  {% if block.location == 'web'%}
+    {% set src = block.src.esc %}
+  {% elseif block.image.toFile %}
+    {% set image = block.image.toFile %}
+    {% set alt = image.alt %}
+    {% set src = image.url %}
+  {% endif %}
+
+  {% block kd_figure %}
+    {% if src %}
+    <figure {% if block.classes != '' %}class="{{ block.classes }}"{% endif %} 
+      {% if block.animation != '' %} data-aos="{{ block.animation }}" {% endif %} 
+      {% if block.color != '' %}style="background-color: {{ block.color }};"{% endif %}>
+      {% if link.isNotEmpty %}
+        <a href="{{ link.toUrl | raw }}">
+          <img class="{% if imgRounded == 'true'%}kd-round{% endif %} w-100" loading="lazy" style="object-fit: cover; aspect-ratio: {{ ratio }}" src="{{ src }}" alt="{{ alt != '' ? alt : image.name }}">
+          {% if imgLable != "" %}
+            <div class="{% if labelRounded == 'true' %}kd-round {% endif %}kd-img-lable">{{ imgLable }}</div>
+          {% endif %}
+        </a>
+      {% else %}
+        <div>
+          <img class="{% if imgRounded == 'true' %}kd-round{% endif %} w-100" loading="lazy" style="object-fit: cover; aspect-ratio: {{ ratio }}" src="{{ src }}" alt="{{ alt != '' ? alt : image.name }}">
+          {% if imgLable != "" %}
+            <div class="{% if labelRounded == 'true' %}kd-round {% endif %}kd-img-lable">{{ imgLable }}</div>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      {% if caption.isNotEmpty %}
+      <figcaption>
+        {{ caption }}
+      </figcaption>
+      {% endif %}
+    </figure>
+    {% endif %}
+  {% endblock %}
+{% endblock %}

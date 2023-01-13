@@ -1,0 +1,34 @@
+{% block kd_blog_item %}
+    {% if (page.needsLogin.isTrue and kirby.user) or page.needsLogin.isFalse %}
+        {{ snippet('head/head') }}
+
+            {{ snippet('navigation/navigation') }}
+            <div class="kd-main-container">
+                <div class="column" style="--columns:12">
+                    <div class="blocks">
+                        <h1 class="kd-heading justify-content-center d-flex text-center">{{ page.customTitle }}</h1>
+                        <hr class="mb-4 kd-divider">
+                    </div>
+                </div>
+                {% block kd_blog_img %}
+                    {% set blogImage = page.blogImg.toFile %}
+                    {% if blogImage != '' %}
+                        <div class="kd-container d-flex justify-content-center">
+                            <img class="kd-round kd-blog-img" loading="lazy" src="{{ blogImage.url }}" alt="{{ blogImage.name }}">
+                        </div>
+                    {% endif %}
+                {% endblock %}
+                <div class="mt-5">
+                    <div class="kd-container"><em>{{ page.date.toDate('d.m.Y') }}</em></div>
+                    {% block kd_blog_content %}
+                        {% include '@plugins/khepri-base/elements/layout.twig' %}
+                    {% endblock %}
+                </div>
+            </div>
+            
+        {{ snippet('footer/footer') }}
+    {% else %}
+        {% set goPage = page.id %}
+        {{ go("/login?go="~goPage) }}
+    {% endif %}
+{% endblock %}

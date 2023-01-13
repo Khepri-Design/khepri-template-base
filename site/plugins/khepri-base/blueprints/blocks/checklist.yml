@@ -1,0 +1,31 @@
+name: Checklist
+title: Checkliste
+icon: check
+
+fields:
+  checkOne:
+    label: Check 1
+    type: text
+    width: 1/3
+  checkTwo:
+    label: Check 2
+    type: text
+    width: 1/3
+  checkThree:
+    label: Check 3
+    type: text
+    width: 1/3
+  color:
+    label: Hintergrundfarbe
+    type: colors
+    width: 1/2
+    help: Farbwert eintragens
+  classes:
+    label: Zusätzliche CSS-Klassen
+    help: z.B. "kd-round" oder "kd-container" (mehrere Klassen mit Leerzeichen trennen)
+    type: text
+    width: 1/2
+  animation:
+    help: z.B. "fade-in", "zoom-in" oder "slide-up"
+    type: text
+    width: 1/2

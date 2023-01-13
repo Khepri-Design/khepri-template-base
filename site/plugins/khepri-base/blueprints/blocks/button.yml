@@ -1,0 +1,42 @@
+name: Button
+icon: server
+
+fields:
+  buttonText:
+    type: text
+    text: autoplay
+    width: 1/2
+  buttonType:
+    label: Typ
+    help: Ändert das Design des Buttons
+    type: select
+    default: primary
+    options:
+      primary: Primär 
+      secondary: Sekundär
+    width: 1/2
+  buttonLink:
+    label: Link
+    type: text
+    help: Setze eine Verlinkung für den Button
+    width: 1/2
+  buttonNewTab:
+    label: Neuer Tab
+    type: checkboxes
+    options:
+      true: Link in neuem Tab öffnen
+    width: 1/2
+  color:
+    label: Hintergrundfarbe
+    type: colors
+    width: 1/2
+    help: Farbwert eintragens
+  classes:
+    label: Zusätzliche CSS-Klassen
+    help: z.B. "kd-round" oder "kd-container" (mehrere Klassen mit Leerzeichen trennen)
+    type: text
+    width: 1/2
+  animation:
+    help: z.B. "fade-in", "zoom-in" oder "slide-up"
+    type: text
+    width: 1/2

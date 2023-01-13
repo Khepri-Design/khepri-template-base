@@ -1,0 +1,19 @@
+.kd-divider {
+  opacity: 1;
+  max-width: 30%;
+  margin: auto;
+  border-top: 2px solid #36434e;
+  border-top-left-radius: $kd-border-radius;
+  border-top-right-radius: $kd-border-radius;
+  border-bottom-left-radius: $kd-border-radius;
+  border-bottom-right-radius: $kd-border-radius;
+}
+
+.kd-divider-large {
+  opacity: 1;
+  border-top: 2px solid #36434e;
+  border-top-left-radius: $kd-border-radius;
+  border-top-right-radius: $kd-border-radius;
+  border-bottom-left-radius: $kd-border-radius;
+  border-bottom-right-radius: $kd-border-radius;
+}

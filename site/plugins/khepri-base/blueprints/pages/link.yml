@@ -1,0 +1,24 @@
+title: Link
+
+tabs:
+  inhalt:
+    icon: url
+    label: Link
+    type: fields
+    fields:
+      customurl:
+        type: text
+        label: Link (Url)
+        placeholder: https://beispiel.de
+        width: 1/2
+      newTab:
+        type: toggle
+        label: In neuem Tab öffnen
+        help: Wenn aktiv, bleibt die aktuelle Seite offen und die Verlinkung wird in einem neuen Tab geöffnet.
+        width: 1/2
+  Zuweisung:
+    extends: tabs/settings
+    fields:
+      otherSettings: false
+      structuredPage: false
+      needsLogin: false

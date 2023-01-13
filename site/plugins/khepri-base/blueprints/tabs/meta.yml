@@ -1,0 +1,28 @@
+icon: search
+type: fields
+fields:
+  robots:
+    type: text
+    label: Robotstag
+    help: z.B. "index, follow"
+    width: 1/2
+  topics:
+    type: text
+    label: Thema der Seite
+    help: hilft Google beim Interpretieren der Seite (z.B. Autos, Reparaturen, Werkstatt)
+    width: 1/2
+  shortDescription:
+    type: textarea
+    label: Kurzbeschreibung
+    help: wird im Browsertab angezeigt
+    width: 1/2
+  description:
+    type: textarea
+    label: Beschreibung
+    help: wird in den Google-Suchergebnissen angezeigt
+    width: 1/2
+  previewImg:
+    type: files
+    label: Vorschaubild
+    help: Wird in Suchergebnissen angezeigt oder als Vorschau beim Teilen des Links (z.B. via Whatsapp)
+    multiple: false

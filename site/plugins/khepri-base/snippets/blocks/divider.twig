@@ -1,0 +1,5 @@
+<hr class="mt-3 mb-3 
+{{ block.dividerType == 'center' ? "kd-divider" : "kd-divider-large" }}
+{% if block.classes != '' %} {{ block.classes }}{% endif %}" 
+{% if block.animation != '' %} data-aos="{{ block.animation }}" {% endif %}
+{% if block.useCustomColor.isTrue and block.customColor != '' %}style="border-color: {{ block.customColor }}; background-color: {{ block.customColor }}"{% endif %}>

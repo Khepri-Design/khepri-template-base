@@ -1,0 +1,174 @@
+Interninfo: 
+
+----
+
+Logoimg: - file://WRq4p7JReaZR3hoN
+
+----
+
+Primarycolor: #689c6a
+
+----
+
+Secondarycolor: #3d4d43
+
+----
+
+Primarycolorcontrast: #7b917c
+
+----
+
+Secondarycolorcontrast: #232f27
+
+----
+
+Textcolor: #3d4d43
+
+----
+
+Bodycolor: #f7f7f7
+
+----
+
+Borderradius: 10px
+
+----
+
+Footersectiononeheading: nützliche links
+
+----
+
+Footersectiontwoheading: unternehmen
+
+----
+
+Footersectionthreeheading: rechtliches
+
+----
+
+Servicenavigation: true
+
+----
+
+Footerdescription: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+
+----
+
+Sociallinks: [{"content":{"link":"","inactive":"false","socialicon":"instagram"},"id":"b9c78536-ce8a-42ec-8924-97e07f00bc42","isHidden":false,"type":"instagram"},{"content":{"link":"","inactive":"false","socialicon":"twitter"},"id":"aa359a98-acb9-4401-8b5d-1f44f69833dc","isHidden":false,"type":"twitter"},{"content":{"link":"","inactive":"false","socialicon":"facebook"},"id":"661380f8-be54-4d8d-a594-8d23433dc1b9","isHidden":false,"type":"facebook"}]
+
+----
+
+Maintenance: false
+
+----
+
+Showhomepageinnavigation: false
+
+----
+
+Brandname: WebDemo
+
+----
+
+Contactmail: webdemo@mail.de
+
+----
+
+Robots: 
+
+----
+
+Topics: 
+
+----
+
+Previewimg: 
+
+----
+
+Shortdescription: Demo Template
+
+----
+
+Description: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+----
+
+Primarycolorkontrast: #9bbf9d
+
+----
+
+Secondarycolorkontrast: #7b917c
+
+----
+
+Primarycolordarken: #7b917c
+
+----
+
+Secondarycolordarken: #7b917c
+
+----
+
+Primarycolorlighten: #bee193
+
+----
+
+Secondarycolorlighten: #bee193
+
+----
+
+Highlightcolor: #ffefdd
+
+----
+
+Pages:
+
+- Blog
+- referenzen
+- galerie
+- uber-uns
+
+----
+
+Footersectionone: nützliche Links
+
+----
+
+Footersectiontwo: über uns
+
+----
+
+Footersectionthree: rechtliches
+
+----
+
+Logoimage: - logo-webdemo.svg
+
+----
+
+Logo: - logo-webdemo.svg
+
+----
+
+Author: Autor der Seite
+
+----
+
+Copyright: Rechteinhaber der Seite
+
+----
+
+Benefit1: Lorem Ipsum
+
+----
+
+Benefit2: Lorem Ipsum
+
+----
+
+Benefit3: Lorem Ipsum
+
+----
+
+Footerdesription: Lorem ipsum

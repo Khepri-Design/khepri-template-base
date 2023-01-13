@@ -1,0 +1,35 @@
+{% block kd_copyright_credits %}
+    <div class="kd-container">
+        <div class="kd-credits">
+            {% if site.serviceNavigation.isFalse %}
+                <div class="text-center">
+                    &copy; {{ site.brandname }} {{ 'now' | date('Y') }} - designed by<strong>&nbsp;<a href="https://khepri.design" target="_blank"><nobr>Khepri Design</nobr></a></strong>
+                </div>
+            {% else %}
+                {% block kd_footer_service %}
+                    <div class="row gy-4">
+                        <div class="kd-service-nav col-lg-4 col-12">
+                            {% for listingItem in site.children.listed %}
+                                    {% if listingItem.footerNavigationThree.isTrue %}
+                                        <a class="kd-service-item" href="{% if listingItem.customurl != '' %}{{ listingItem.customurl }}{% else %}{{ listingItem.url }}{% endif %}" {% if listingItem.newTab.isTrue %}target="_blank"{% endif %}>{{ listingItem.title }}</a>
+                                    {% endif %}
+                                    {% if listingItem.hasListedChildren %}
+                                        {% for listingItemChild in listingItem.children.listed %}
+                                            {% if listingItemChild.footerNavigationThree.isTrue %}
+                                                <a class="kd-service-item" href="{% if listingItemChild.customurl != '' %}{{ listingItemChild.customurl }}{% else %}{{ listingItemChild.url }}{% endif %}" {% if listingItem.newTab.isTrue %}target="_blank"{% endif %}>{{ listingItemChild.title }}</a>
+                                            {% endif %}
+                                        {% endfor %}
+                                    {% endif %}
+                            {% endfor %}
+                        </div>
+                        <div class="col-lg-8 col-12">
+                            <div class="d-flex kd-service-credits text-center">
+                                &copy; {{ site.brandname }} {{ 'now' | date('Y') }} - designed by<strong>&nbsp;<a href="https://khepri.design" target="_blank"><nobr>Khepri Design</nobr></a></strong>
+                            </div>
+                        </div>
+                    </div>
+                {% endblock %}
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

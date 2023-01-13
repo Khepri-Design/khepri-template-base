@@ -1,0 +1,36 @@
+name: Download
+title: Datei-Download
+icon: download
+
+fields:
+  dataFile:
+    type: files
+    label: Datei
+    query: page.files
+    multiple: false
+    width: 1/2
+  downloadText:
+    type: text
+    label: Text auf Button
+    default: herunterladen
+    width: 1/2
+  apperance:
+    type: checkboxes
+    label: Button durch Dateinamen ersetzen
+    options:
+      active: aktiv
+    width: 1/2
+  color:
+    label: Hintergrundfarbe
+    type: colors
+    width: 1/2
+    help: Farbwert eintragens
+  classes:
+    label: Zusätzliche CSS-Klassen
+    help: z.B. "kd-round" oder "kd-container" (mehrere Klassen mit Leerzeichen trennen)
+    type: text
+    width: 1/2
+  animation:
+    help: z.B. "fade-in", "zoom-in" oder "slide-up"
+    type: text
+    width: 1/2

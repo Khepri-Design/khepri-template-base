@@ -1,0 +1,21 @@
+.grid {
+  --columns: 12;
+  --gutter: 1.5rem;
+  display: grid;
+  grid-gap: var(--gutter);
+  grid-template-columns: 1fr;
+}
+
+@media screen and (min-width: 60rem) {
+  .grid {
+    grid-template-columns: repeat(12, 1fr);
+  }
+  .grid > .column {
+    grid-column: span var(--columns);
+  }
+
+}
+
+.column {
+  padding: 25px;
+}

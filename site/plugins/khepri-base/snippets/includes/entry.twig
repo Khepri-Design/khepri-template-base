@@ -1,0 +1,32 @@
+{% block kd_entry %}
+    <div class="kd-entry-column">
+        {% set entryImage = page.headerImage.toFile %}
+
+        <div class="kd-entry-backgroundimg-container">
+            <div class="kd-container">
+                <div class="row justify-content-center align-items-center">
+                    {% block kd_heading_section %}
+                        <div class="col-lg-6 kd-entry-heading-section">
+                            <h2 class="kd-entry-subheading" data-aos="slide-right">{{ page.subHeading }}</h2>
+                            <h1 class="kd-entry-heading" data-aos="slide-right">{{ page.heading }}</h1>
+                            {# optional button #}
+                            {#<div class="kd-btn-container" data-aos="flip-right"><a class="kd-btn kd-btn-primary mt-3" href="#">mehr Erfahren</a></div>#}
+                        </div>
+                    {% endblock %}
+                    {% block kd_img_section %}
+                        {% set responsiveElement1File = 'assets/img/static/responsive-element-1.png' %}
+                        {% set responsiveElement1FilePlaceholder = 'media/plugins/khepri-design/khepri-base/img/placeholder/responsive-element-1.png' %}
+                        {% set responsiveElement2File = 'assets/img/static/responsive-element-2.png' %}
+                        {% set responsiveElement2FilePlaceholder = 'media/plugins/khepri-design/khepri-base/img/placeholder/responsive-element-2.png' %}
+                        
+                        <div class="col-lg-6 kd-parallax" data-aos="zoom-in">
+                            <div class="w-100 h-100" data-depth="0.075"><img class="kd-entry-img-container" src="{{ entryImage != '' ? entryImage.url : "media/plugins/khepri-design/khepri-base/img/placeholder/entryImage.png" }}" alt="{{ site.brandname }} Hauptbild"></div>
+                            <div class="w-100 h-100" data-depth="0.5"><img class="kd-entry-img-container" src="{{ site.url }}/{{ responsiveElement1File is existing file ? responsiveElement1File : responsiveElement1FilePlaceholder }}" alt="{{ site.brandname }} Akzente One"></div>
+                            <div class="w-100 h-100" data-depth="0.2"><img class="kd-entry-img-container" src="{{ site.url }}/{{ responsiveElement2File is existing file ? responsiveElement2File : responsiveElement2FilePlaceholder }}" alt="{{ site.brandname }} Akzente Two"></div>
+                        </div>
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

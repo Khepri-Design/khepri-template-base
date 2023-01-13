@@ -1,0 +1,25 @@
+name: Textadvanced
+title: Text
+icon: text
+wysiwyg: true
+preview: textadvanced
+
+fields:
+  text:
+    label: Text
+    type: textarea
+    preview: markdown
+  color:
+    label: Hintergrundfarbe
+    type: colors
+    width: 1/2
+    help: Farbwert eintragens
+  classes:
+    label: Zusätzliche CSS-Klassen
+    help: z.B. "kd-round" oder "kd-container" (mehrere Klassen mit Leerzeichen trennen)
+    type: text
+    width: 1/2
+  animation:
+    help: z.B. "fade-in", "zoom-in" oder "slide-up"
+    type: text
+    width: 1/2

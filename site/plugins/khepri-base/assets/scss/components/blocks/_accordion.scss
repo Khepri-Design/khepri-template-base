@@ -1,0 +1,33 @@
+.accordion-button {
+  &:focus {
+    z-index: 3;
+    border-color: none;
+    outline: 0;
+    box-shadow: none;
+  }
+
+  &:hover {
+    background-color: #f1f1f1;
+  }
+}
+
+.accordion-button:not(.collapsed) {
+  color: #f1f1f1;
+  background-color: $kd-brand-color-primary-contrast;
+}
+
+.accordion-button::after {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  content: "\f078";
+  background: none;
+}
+
+.accordion-button:not(.collapsed)::after {
+  background: none;
+  transform: none;
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  content: "\f077";
+  background: none;
+}

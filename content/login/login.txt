@@ -1,0 +1,21 @@
+Title: Login
+
+----
+
+Alert: Benutzername oder Passwort ungültig
+
+----
+
+Username: E-Mail Adresse
+ 
+----
+
+Password: Passwort
+
+----
+
+Button: Anmelden
+
+----
+
+Uuid: HssOiG28IiVMa0K4

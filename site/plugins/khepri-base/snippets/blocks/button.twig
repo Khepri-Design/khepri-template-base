@@ -1,0 +1,9 @@
+<div class="d-flex justify-content-center">
+  <a class="kd-btn kd-btn-{{ block.buttonType }}
+  {% if block.classes != '' %} {{ block.classes }} {% endif %}" 
+    href="{{ block.buttonLink }}" {% if block.animation != '' %} data-aos="{{ block.animation }}" {% endif %}
+    {% if block.buttonNewTab != '' %}target="_blank"{% endif %} 
+    {% if block.color != '' %}style="background-color: {{ block.color }}"{% endif %}>
+    {{ block.buttonText }}
+  </a>
+</div>

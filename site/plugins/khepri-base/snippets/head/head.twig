@@ -1,0 +1,18 @@
+{% block kd_head %}
+  {% if site.maintenance.isTrue and ((page.uid != 'wartung') and (page.template.name != 'impressum') and (page.template.name != 'datenschutz')) %} {{ go(site.url~'/wartung') }} {% endif %}
+  {% if site.maintenance.isFalse and (page.uid == 'wartung') %} {{ go(site.url) }} {% endif %}
+  <!DOCTYPE html>
+  <html lang="de_DE">
+    <head>
+      {{ snippet('head/head-meta') }}
+      {{ snippet('head/head-includes') }}
+      {{ snippet('head/head-dynamic-styles') }}
+    </head>
+    <body>
+      {% if page.url == site.url %}
+        <div itemscope itemtype="https://schema.org/WebSite">
+          <meta itemprop="url" content="{{ site.url }}"/>
+          <meta itemprop="name" content="{{ site.brandName }}"/>
+        </div>
+      {% endif %}
+{% endblock %}

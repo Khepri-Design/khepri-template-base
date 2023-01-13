@@ -1,0 +1,10 @@
+name: hook
+title: Sprungmarke
+icon: flag
+
+fields:
+  hookId:
+    type: text
+    label: Id
+    placeholder: eineId
+    help: mit einer Verlinkung auf '#eineId' innerhalb der gleichen Seite, wird zu dieser Position gescrollt

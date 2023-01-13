@@ -1,0 +1,126 @@
+{% block kd_event_overview %}
+    {% if (page.needsLogin.isTrue and kirby.user) or page.needsLogin.isFalse %}
+        {{ snippet('head/head') }}
+            {{ snippet('navigation/navigation') }}
+            <div class="kd-main-container">
+                {% block kd_event_overview_content %}
+                    {% include '@plugins/khepri-base/elements/layout.twig' %}
+                {% endblock %}
+                <div class="kd-container kd-overflow-visible">
+                    <div class="mb-4">{{ snippet('includes/event-preview') }}</div>
+                    <div class="row">
+                        {% block kd_event_list %}
+                            {% set currentTime = date().getTimestamp %}
+                            {% set eventsSorted = site.children.filterBy('intendedTemplate', 'event-overview').children.listed.sortBy('dateTime', 'asc') %}
+                            {% set nextEvent = '' %}
+                            {% for eventSorted in eventsSorted %}
+                                {% if eventSorted.dateTime.toTimeStamp > currentTime %}
+                                    {% if nextEvent == '' %}
+                                        {% set nextEvent = eventSorted %}
+                                    {% endif %}
+                                {% endif %}    
+                            {% endfor %}
+                            {% for event in eventsSorted %}
+                                {% if event != nextEvent and event.dateTime.toTimeStamp > currentTime %}
+                                    <div class="col-xl-4 col-lg-6 kd-blog-item">
+                                        <div class="kd-card kd-round kd-mouseover-grow mb-4">
+                                            <a class="kd-href" href="{{ event.url }}">
+                                                <figure>
+                                                {% set eventImage = event.eventImg.toFile %}
+                                                    {% if eventImage %}<img class="kd-round-top kd-card-image" width="100%" height="300px" loading="lazy" src="{{ eventImage.url }}" alt="{{ eventImage.name }}">{% endif %}
+                                                    <div class="kd-card-body">
+                                                        <figcaption class="kd-card-title kd-text-primary kd-text-md kd-text-heavy">{{ event.customTitle }}</figcaption>
+                                                        <hr class="mb-4 kd-divider">
+                                                        <div class="row">
+                                                            <div class="col-12 kd-event-data">
+                                                                <div class="kd-event-data-item kd-round row">
+                                                                    <div class="col-2">
+                                                                        <i class="fa-solid fa-calendar"></i>
+                                                                    </div>
+                                                                    <div class="col-10">
+                                                                        <div>{{ event.dateTime | date('d.m.Y H:i') }} Uhr</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-12 kd-event-data">
+                                                                <div class="kd-event-data-item kd-round row">
+                                                                    <div class="col-2">
+                                                                        <i class="fa-solid fa-location-dot"></i>
+                                                                    </div>
+                                                                    <div class="col-10">
+                                                                        <div>{{ event.location }}</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <p class="kd-event-teasertext">{% if event.teaserText != '' %}<br>{{ event.teaserText }} [...]{% endif %}</p>
+                                                    </div>
+                                                </figure>
+                                            </a>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        {% endblock %}
+                        {% block kd_event_list_expired %}
+                            {% set currentTime = date().getTimestamp %}
+                            {% set eventsSorted = site.children.filterBy('intendedTemplate', 'event-overview').children.listed.sortBy('dateTime', 'desc') %}  
+                            {% for event in eventsSorted %}
+                                {% if event.dateTime.toTimeStamp < currentTime %}
+                                    <div class="col-lg-4 col-md-6 kd-blog-item">
+                                        <div class="kd-card kd-round kd-mouseover-grow mb-4">
+                                            <div class="kd-expired-badge kd-round" data-aos="zoom-out">
+                                                <div>Vorbei</div>
+                                            </div>
+                                            <a class="kd-href kd-expired" href="{{ event.url }}">
+                                                <figure>
+                                                {% set eventImage = event.eventImg.toFile %}
+                                                    {% if eventImage %}<img class="kd-round-top kd-card-image" width="100%" height="300px" loading="lazy" src="{{ eventImage.url }}" alt="{{ eventImage.name }}">{% endif %}
+                                                    <div class="kd-card-body">
+                                                        <figcaption class="kd-card-title kd-text-primary kd-text-md kd-text-heavy">{{ event.customTitle }}</figcaption>
+                                                        <hr class="mb-4 kd-divider">
+                                                        <div class="row">
+                                                            <div class="col-12 kd-event-data">
+                                                                <div class="kd-event-data-item kd-round row">
+                                                                    <div class="col-2">
+                                                                        <i class="fa-solid fa-calendar"></i>
+                                                                    </div>
+                                                                    <div class="col-10">
+                                                                        <div>{{ event.dateTime | date('d.m.Y H:i') }} Uhr</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-12 kd-event-data">
+                                                                <div class="kd-event-data-item kd-round row">
+                                                                    <div class="col-2">
+                                                                        <i class="fa-solid fa-location-dot"></i>
+                                                                    </div>
+                                                                    <div class="col-10">
+                                                                        <div>{{ event.location }}</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <p class="kd-event-teasertext">{% if event.teaserText != '' %}<br>{{ event.teaserText }} [...]{% endif %}</p>
+                                                    </div>
+                                                </figure>
+                                            </a>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+
+        {{ snippet('footer/footer') }}
+    {% else %}
+        {% set goPage = page.id %}
+        {{ go("/login?go="~goPage) }}
+    {% endif %}
+{% endblock %}

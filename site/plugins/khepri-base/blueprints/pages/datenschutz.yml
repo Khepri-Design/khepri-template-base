@@ -1,0 +1,24 @@
+title: Datenschutzerklärung
+
+options:
+  delete: false
+  duplicate: false
+
+tabs:
+    
+  Datenschutz-text:
+    icon: text
+    type: fields
+    fields:
+      pageContent:
+        type: textarea
+        label: Inhalt
+        width: 1/1
+  Meta-Daten:
+    extends: tabs/meta
+  Einstellungen:
+    extends: tabs/settings
+    fields:
+      otherSettings: false
+      structuredPage: false
+      needsLogin: false
