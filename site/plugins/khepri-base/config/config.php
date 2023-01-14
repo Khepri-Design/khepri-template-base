@@ -5,6 +5,9 @@ return [
   'email' => [
     'transport' => require __DIR__ . '/mailer.php',
   ],
+  'khepri.twig.env.tests' => [
+    'existing file' => 'twig_test_existing'
+  ],
   'routes' => [
     [
       'pattern' => 'logout',

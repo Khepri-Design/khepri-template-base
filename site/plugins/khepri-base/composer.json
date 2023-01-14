@@ -21,6 +21,11 @@
 		"getkirby/composer-installer": "^1.1",
         "twig/twig": "^3.4"
 	},
+    "autoload": {
+        "psr-4": {
+            "khepri\\Twig\\": "src/classes/"
+        }
+    },
 	"config": {
 		"optimize-autoloader": true,
 		"allow-plugins": {

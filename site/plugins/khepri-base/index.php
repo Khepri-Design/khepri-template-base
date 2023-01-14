@@ -10,6 +10,10 @@ kirby()->extend([
   'options' => require __DIR__ . '/config/config.php',
 ]);
 
+function twig_test_existing($file) {
+    return file_exists($file);
+}
+
 Kirby::plugin('khepri-design/khepri-base', [
   'blueprints' => [
     'site' => __DIR__ . '/blueprints/site.yml',
