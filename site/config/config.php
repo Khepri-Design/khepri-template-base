@@ -4,5 +4,8 @@ return [
     'panel' => [
         'css' => 'assets/panel/css/panel.css',
         'slug' => 'admin'
-  ],
+    ],
+    'url' => [
+      'https://pupukaka.memez.de',
+    ]
 ];
