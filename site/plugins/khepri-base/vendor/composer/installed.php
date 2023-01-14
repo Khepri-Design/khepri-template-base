@@ -1,8 +1,8 @@
 <?php return array(
     'root' => array(
         'name' => 'khepri-design/khepri-base',
-        'pretty_version' => '3.8.8.1',
-        'version' => '3.8.8.1',
+        'pretty_version' => '3.8.8.2',
+        'version' => '3.8.8.2',
         'reference' => NULL,
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
@@ -20,8 +20,8 @@
             'dev_requirement' => false,
         ),
         'khepri-design/khepri-base' => array(
-            'pretty_version' => '3.8.8.1',
-            'version' => '3.8.8.1',
+            'pretty_version' => '3.8.8.2',
+            'version' => '3.8.8.2',
             'reference' => NULL,
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
