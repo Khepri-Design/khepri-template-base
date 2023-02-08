@@ -15,24 +15,19 @@ tabs:
             help: Wird als Hauptbild im Beitrag und als Beitragsvorschau angezeigt
             query: page.images
             multiple: false
-            width: 1/2
-          customTitle:
-            type: text
-            label: Titel
-            help: Titel des Beitrags
-            width: 1/2
+            width: 1/3
           date:
             type: date
             label: Datum
-            help: Wird im Beitrag und in der Übersicht ausgegeben
+            help: Beiträge werden auf der Website nach Datum sortiert
             display: DD.MM.YYYY
-            width: 1/2
+            width: 1/3
           teaserText:
             type: textarea
             label: Vorschautext
             maxlength: 200
             help: Wird als Vorschau in der Beitragsübersicht angezeigt
-            width: 1/2
+            width: 1/3
       content:
         label: Inhalt
         type: fields

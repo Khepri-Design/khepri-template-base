@@ -24,7 +24,7 @@ fields:
     width: 1/2
   classes:
     label: Zusätzliche CSS-Klassen
-    help: z.B. "kd-round" oder "kd-container" (mehrere Klassen mit Leerzeichen trennen)
+    help: z.B. "kd-round", "kd-shadow" oder "kd-text-primary"
     type: text
     width: 1/2
   animation:

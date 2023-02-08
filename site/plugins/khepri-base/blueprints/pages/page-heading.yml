@@ -12,9 +12,7 @@ tabs:
           page
           page-heading
           link
-          blog-item
           blog-overview
-          event-item
           event-overview
           contact
       content:

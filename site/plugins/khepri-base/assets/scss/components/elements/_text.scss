@@ -21,36 +21,36 @@
 
 h1 {
   &.kd-heading {
-    font-size: clamp(1.8rem, 5vw, 2.4rem);
+    font-size: clamp(2rem, 6vw, 3rem);
   }
 }
 
 h2 {
   &.kd-heading {
-    font-size: clamp(1.3rem, 4.5vw, 1.9rem);
+    font-size: clamp(1.8rem, 5vw, 2.4rem);
   }
 }
 
 h3 {
   &.kd-heading {
-    font-size: clamp(1.1rem, 3vw, 1.6rem);
+    font-size: clamp(1.4rem, 4vw, 2rem);
   }
 }
 
 h4 {
   &.kd-heading {
-    font-size: clamp(0.8rem, 2vw, 1.4rem);
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
   }
 }
 
 h5 {
   &.kd-heading {
-    font-size: clamp(0.6rem, 1vw, 1.2rem);
+    font-size: clamp(1rem, 2vw, 1.6rem);
   }
 }
 
 h6 {
   &.kd-heading {
-    font-size: clamp(0.5rem, 0.5vw, 1.1rem);
+    font-size: clamp(0.8rem, 1.5vw, 1.4rem);
   }
 }

@@ -1,0 +1,39 @@
+{% block kd_search_field %}
+    <div class="d-flex justify-content-center">
+        <form class="kd-form col-8 d-flex justify-content-center">
+            <div class="kd-field col-11">
+                <input type="search" aria-label="Search" placeholder="Durchsuchen..." name="q" value="{{ html(query) }}" autofocus>
+            </div>
+            <div>
+                <button type="submit" class="kd-btn-search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+        </form>
+    </div>
+{% endblock %}
+
+{% block kd_search_message %}
+    <div class="kd-search-message d-none">
+        {% if results is empty %}
+            <p class="text-center">Keine Seite gefunden</p>
+        {% elseif results.count == 1 %}
+            <p class="text-center">{{ go(results.first.url) }}
+        {% else %}
+            <p class="text-center"><span class="kd-text-primary kd-underlined">{{ results.count }}</span> Seiten gefunden</span></p>
+        {% endif %}
+    </div>
+{% endblock %}
+
+{% block kd_search_result %}
+    <div class="kd-search-results">
+        {% for result in results %}
+            <a class="kd-card kd-round kd-href kd-mouseover-color text-center aos-init aos-animate text-center" href="{{ result.url }}">
+                <div class="kd-card-body">
+                    <i class="fa-solid fa-file-lines"></i><br>
+                        {{ result.title }}
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+{% endblock %}

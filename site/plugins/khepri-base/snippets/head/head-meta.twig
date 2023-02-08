@@ -21,6 +21,8 @@
   <title>
     {% if page.url == site.url %}
       {{ site.shortDescription }}
+    {% elseif page.template.name == 'default' %}
+      Oops!
     {% else %}
       {{ page.shortDescription != ''
         ? page.shortDescription

@@ -18,7 +18,7 @@
                                             {% set blogImage = blog.blogImg.toFile %}
                                                 {% if blogImage %}<img class="kd-round-top kd-card-image" height="100%" width="100%" loading="lazy" src="{{ blogImage.url }}" alt="{{ blogImage.name }}">{% endif %}
                                                 <div class="kd-card-body">
-                                                    <figcaption class="kd-card-title kd-text-primary kd-text-md kd-text-heavy">{{ blog.customTitle }}</figcaption>
+                                                    <figcaption class="kd-card-title kd-text-primary kd-text-md kd-text-heavy text-center">{{ blog.title }}</figcaption>
                                                     <hr class="mb-4 kd-divider">
                                                     <p class="kd-blog-teasertext">{% if blog.teaserText != '' %}{{ blog.teaserText }} [...]{% endif %}</p>
                                                     <small>{{ blog.date.toDate('d.m.Y') }}</small>

@@ -1,1 +1,1 @@
-## Khepri Template - KUNDE
+## Khepri Template

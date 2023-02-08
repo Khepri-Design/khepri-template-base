@@ -1,7 +1,12 @@
 
 {% block kd_navigation %}
     <div id="header" class="header fixed-top">
-        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+        <div class="container-fluid container-xl d-flex align-items-center 
+            {% if site.maintenance.isFalse %}
+                justify-content-between
+            {% else %}
+                justify-content-center
+            {% endif %}">
             {% block kd_logo %}
                 {% set logoImage = site.logoImg.toFile %}
                 <a href="{{ site.url }}" class="kd-logo d-flex align-items-center"><img src="{{ logoImage != '' ? logoImage.url : "media/plugins/khepri-design/khepri-base/img/placeholder/logo.svg" }}" alt="{{site.brandname }} Logo"/></a>
@@ -40,7 +45,7 @@
                                                                 {% if listingItemChild.hasListedChildren and listingItemChild.template.name != 'blog-overview' and listingItemChild.template.name != 'event-overview' %}
                                                                     <li class="dropdown">
                                                                         <div class="dropdown-dropdown-container d-flex align-items-center">
-                                                                            <a {% if page.url == listingItemChild.url or listingItemChild.children.filterBy('url', page.url) != '' %} class="active"{% endif %} {% if listingItemChild.structuredPage.isFalse %}href="{% if listingItemChild.customurl != '' %}{{ listingItemChild.customurl }}{% else %}{{ listingItemChild.url }}{% endif %}"{% endif %} {% if listingItem.newTab.isTrue %}target="_blank"{% endif %}>
+                                                                            <a {% if page.url == listingItemChild.url or listingItemChild.children.filterBy('url', page.url) != '' %} class="active"{% endif %} {% if listingItemChild.structuredPage.isFalse %}href="{% if listingItemChild.customurl != '' %}{{ listingItemChild.customurl }}{% else %}{{ listingItemChild.url }}{% endif %}"{% endif %} {% if listingItemChild.newTab.isTrue %}target="_blank"{% endif %}>
                                                                                 <span>{{ listingItemChild.title }}</span>
                                                                             </a>
                                                                             {% set hasListedChildren = false %}
@@ -58,15 +63,15 @@
                                                                             {% for listingItemChildChild in listingItemChild.children.listed %}
                                                                                 {% if  listingItemChildChild.mainNavigation.isTrue %}
                                                                                     <li><a class="nav-link-child{% if page.url == listingItemChildChild.url %} active{% endif %}" {% if listingItemChildChild.structuredPage.isFalse %}href="{% if listingItemChildChild.customurl != '' %}{{ listingItemChildChild.customurl }}{% else %}{{ listingItemChildChild.url }}{% endif %}"{% endif %}
-                                                                                        {% if listingItem.newTab.isTrue %}target="_blank"{% endif %}>{{ listingItemChildChild.title }}</a>
+                                                                                        {% if listingItemChildChild.newTab.isTrue %}target="_blank"{% endif %}>{{ listingItemChildChild.title }}</a>
                                                                                     </li>
                                                                                 {% endif %}
                                                                             {% endfor %}
                                                                         </ul>
                                                                     </li>
                                                                 {% else %}
-                                                                    <li><a class="nav-link{% if page.url == listingItemChild.url %} active{% endif %}" {% if listingItem.structuredPage.isFalse %}href="{% if listingItemChild.customurl != '' %}{{ listingItemChild.customurl }}{% else %}{{ listingItemChild.url }}{% endif %}"{% endif %}
-                                                                        {% if listingItem.newTab.isTrue %}target="_blank"{% endif %}>{{ listingItemChild.title }}</a>
+                                                                    <li><a class="nav-link{% if page.url == listingItemChild.url %} active{% endif %}" {% if listingItemChild.structuredPage.isFalse %}href="{% if listingItemChild.customurl != '' %}{{ listingItemChild.customurl }}{% else %}{{ listingItemChild.url }}{% endif %}"{% endif %}
+                                                                        {% if listingItemChild.newTab.isTrue %}target="_blank"{% endif %}>{{ listingItemChild.title }}</a>
                                                                     </li>
                                                                 {% endif %}
                                                             {% endif %}
@@ -95,6 +100,13 @@
                                     {% endif %}
                                 {% endif %}
                             {% endblock %}
+                        {% block kd_search_button_d %}
+                            {% if site.headerSearch.isTrue %}
+                                <a class="kd-search-container-header-d kd-round" href="{{ site.url }}/suche">
+                                    <i class="fa-solid fa-magnifying-glass kd-search-icon-header-d"></i>&nbsp;&nbsp;Suche
+                                </a>
+                            {% endif %}
+                        {% endblock %}
                         {% elseif site.serviceNavigation.isfalse %}
                             {% block kd_legal %}
                                 <li><a href="{{ site.children.filterBy('intendedTemplate', 'impressum') }}">Impressum</a></li>
@@ -102,7 +114,15 @@
                             {% endblock %}
                         {% endif %}
                     </ul>
-                    {# <i class="fa-solid fa-bars mobile-nav-toggle"></i> #}
+
+                    {% block kd_search_button_m %}
+                        {% if site.headerSearch.isTrue %}
+                            <a class="kd-search-container-header-m kd-round" href="{{ site.url }}/suche">
+                                <i class="fa-solid fa-magnifying-glass kd-search-icon-header-m"></i>
+                            </a>
+                        {% endif %}
+                    {% endblock %}
+
                     <div class="mobile-nav-toggle" aria-expanded="false">
                         <svg class="mobile-nav-toggle-icon" viewbox="0 0 100 100" width="40">
                             <rect class="first line" width="80" height="10" x="10" y="20" rx="5"></rect>

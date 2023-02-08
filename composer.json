@@ -1,11 +1,39 @@
 {
-    "require": {
-      "getkirby/cms": "^3.8.3"
-    },
-    "config": {
-      "optimize-autoloader": true,
-        "allow-plugins": {
-            "getkirby/composer-installer": true
-        }
+  "name": "khepri/template",
+  "description": "Khepri Template",
+  "version": "3.9.1.1",
+  "type": "project",
+  "keywords": [
+    "kirby",
+    "cms",
+    "khepri-template"
+  ],
+  "homepage": "https://khepri.design",
+  "authors": [
+    {
+      "name": "Timo Haas",
+      "email": "timo.haas@khepri.design",
+      "homepage": "https://khepri.design"
+    }
+  ],
+  "support": {
+    "email": "support@khepri.design",
+    "website": "https://khepri.design#contact"
+  },
+  "require": {
+    "php": ">=7.4.0 <8.2.0",
+    "getkirby/cms": "^3.6"
+  },
+  "scripts": {
+    "start": [
+      "Composer\\Config::disableProcessTimeout",
+      "@php -S localhost:8000 kirby/router.php"
+    ]
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "allow-plugins": {
+      "getkirby/composer-installer": true
     }
   }
+}

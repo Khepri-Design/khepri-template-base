@@ -4,12 +4,12 @@
 
 * {
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
 }
 
 body {
   position: relative;
-  font-family: "kd-font";
-  font-size: clamp(0.85rem, 2vw, 1rem);
   color: $kd-text-color-primary;
   background-color: $kd-body-color;
 }

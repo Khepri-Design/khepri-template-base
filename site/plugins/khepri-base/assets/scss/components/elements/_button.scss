@@ -16,6 +16,7 @@
   padding: 0.375rem 0.75rem;
   border-radius: $kd-border-radius;
   transition: 0.25s;
+  min-width: 250px;
 }
 
 a.kd-btn {
@@ -43,4 +44,45 @@ a.kd-btn {
       background-color: $kd-brand-color-secondary-contrast;
       color: $kd-text-color-white;
     }
+}
+
+.kd-btn-light {
+  background-color: $kd-text-color-white;
+  color: $kd-text-color-primary;
+  border: 3px solid transparent;
+
+    &:hover {
+      background-color: $kd-text-color-primary;
+      color: $kd-text-color-white;
+    }
+}
+
+.kd-btn-good {
+  background-color: #689c6a;
+  color: $kd-text-color-white;
+  border: 3px solid transparent;
+  white-space: normal;
+
+    &:hover {
+      background-color: #7b917c;
+      color: $kd-text-color-white;
+    }
+}
+
+.kd-btn-warn {
+  background-color: #eb5959;
+  color: $kd-text-color-white;
+  border: 3px solid transparent;
+  white-space: normal;
+
+    &:hover {
+      background-color: #b93c3c;
+      color: $kd-text-color-white;
+    }
+}
+
+.kd-btn-search {
+  border: 0;
+  padding-bottom: 1px;
+  background: none;
 }

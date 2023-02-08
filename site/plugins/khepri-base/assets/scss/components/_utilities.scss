@@ -1,9 +1,21 @@
+// Khepri utilities
+
+.kd-text-center {
+  * {
+    text-align: center;
+  }
+}
+
 .kd-text-primary {
   color: $kd-brand-color-primary !important;
 }
 
 .kd-text-secondary {
   color: $kd-brand-color-secondary !important;
+}
+
+.kd-text-white {
+  color: $kd-text-color-white !important;
 }
 
 .kd-shadow {
@@ -58,6 +70,17 @@
       scale: 1.05;
     }
 }
+
+.kd-mouseover-color {
+  transition: 0.3s !important;
+ 
+     &:hover {
+       background-color: $kd-brand-color-primary;
+       * {
+        color: $kd-text-color-white !important;
+       }
+     }
+ }
 
 .kd-mouseover-pointer:hover {
   cursor: pointer;

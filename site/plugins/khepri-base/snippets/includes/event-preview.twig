@@ -14,7 +14,7 @@
             {% block kd_event_left %}
                 <div class="col-lg-6 col-12 kd-event-preview-left kd-round-left">
                     <div class="kd-event-preview-next"><strong>Nächste Veranstaltung</strong></div>
-                    <div class="kd-event-preview-title"><span>{{ nextEvent.customTitle }}</span></div>
+                    <div class="kd-event-preview-title"><span>{{ nextEvent.title }}</span></div>
                     {% set buttonText = 'mehr Erfahren' %}
                         <div class="row kd-event-data-list d-none d-lg-flex">
                         <div class="col-lg-4 kd-event-data">
@@ -58,7 +58,14 @@
                 </div>
             {% endblock %}
             {% block kd_event_right %}
-                <div class="col-lg-6 col-12 kd-event-preview-right kd-round-right d-flex justify-content-center align-items-center" style="background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('{{ nextEvent.eventImg.toFile.url }}');">
+                <div class="col-lg-6 col-12 kd-event-preview-right kd-round-right d-flex justify-content-center align-items-center" 
+                    {% if nextEvent.eventImg != '' %}
+                        style="background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('{{ nextEvent.eventImg.toFile.url }}');"
+                    {% else %}
+                        {% set eventImageFile = 'assets/img/static/eventImage.jpg' %}
+                        {% set eventImageFilePlaceholder = 'media/plugins/khepri-design/khepri-base/img/placeholder/eventImage.jpg' %}
+                        style="background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('{{ site.url }}/{{ eventImageFile is existing file ? eventImageFile : eventImageFilePlaceholder }}');"
+                    {% endif %}>
                     <div class="kd-counter">
                         <div class="col-md-2 col-12 kd-counter-box kd-round" data-aos="zoom-in">
                             <div class="kd-counter-unity-days-count">0</div><div class="kd-counter-unity-days">Tage</div>

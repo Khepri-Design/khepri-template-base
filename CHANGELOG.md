@@ -1,4 +1,64 @@
-## Version 3.8.8
+## Version 3.9.1.1
+*07.02.2023*
+
+- **Fix: Unterseiten einer Strukturkategorie, konnten in der hauptnavigation ebenfalls nicht geklickt werden**
+
+- **Fix: Unterseiten die als Link definiert waren, konnten nicht in einem neuen Browsertab geöffnet werden**
+
+- **Fix: Die gesetzte Schriftart konnte teilweise nicht geladen werden**
+
+- **Fix: Das Burgermenü-Icon in der mobilen Ansicht sprang nach dem Klick teilweise**
+
+## Version 3.9.1
+*06.02.2023*
+
+- **Trenner Element Darstellung im Pagebuilder verbessert**
+    - der Trenner bekommt nun die entsprechende Farbe und wird zentriert, wenn definiert
+
+- **Der Text-block ist nun deutlich schlanker und kann ohne diesen im Pagebuilder zu öffnen, beschrieben werden**
+
+- **Im Bild-Block wurden überflüssige Funktionen entfernt**
+
+- **Checkboxen auf Formularen werden jetzt in der Primärfarbe dargestellt**
+
+- **In der Konfiguration des Blocks "Cardbox" wurde "Kanten" zu "Ecken" umbenannt**
+
+## Version 3.9
+*21.01.2023*
+
+- **Suchseite hinzugefügt**
+    - im Tab "Design" kann die Suchseite aktiviert / deaktiviert werden
+    - Im Hauptmenü wird ein neuer Punkt "Suche" angezeigt, welcher auf deinewebsite.de/suche führt
+    - dort kann in einer Suchleiste nach Seiten gesucht werden
+    - dem Besucher werden die Suchergebnisse angezeigt oder er wird direkt in die gesuchte Seite geführt
+- **Neue 404-Seite**
+    - ruft ein Besucher eine URL auf, die nicht existiert, landet er auf der 404 Seite
+    - die 404-Seite informiert darüber, dass die Aufgerufene Seite nicht existiert und bietet ein Suchfeld, worüber die existierenden Seiten durchsucht werden können
+    - wird mittels des Suchfeldes lediglich ein Ergebnis ausgeliefert, landet der Besucher direkt in der Seite
+    - wird mittels des Suchfeldes mehr als ein Ergebnis ausgeliefert, werden diese as Kacheln aufgelistet
+- **In Events existiert nun ein Feld für eine detaillierte Adresse**
+    - diese Adresse wird in der Detailansicht des Events angezeigt
+    - Beispiel: "Silverstreet 12, 12345 Musterheim"
+- **Der Datenschutzhinweis auf Formularen ist jetzt als Pop-Up eingebunden**
+    - vorher wurde der Besucher in einem neuen Tab auf die Datenschutzseite verwiesen
+    - jetzt öffnet sich eine überlagernde Box, in welcher die Datenschutzbedingungen angezeigt werden
+    - vor allem auf Mobilgeräten, hat das den Vorteil, dass der Besucher die Seite durch das Anklicken nicht verlässt
+- **Formularfelder werden jetzt farbig hervorgehoben, wenn Sie angewählt sind**
+- **Platzhalter für Event-Vorschaubild**
+    - bisher musste immer ein Event-Vorschaubild hinterlegt werden um ein Event anzulegen
+    - es gibt jetzt ein Platzhalterbild, welches angezeigt wird, wenn kein Bild hinterlegt wurde
+- **Schriftgrößen für alle Ansichten verbesser**
+- **Fonts- / Schriftarten-Einbindung wurde verbessert**
+- **Events und Beiträge verwenden als Anzeigetitel jetzt den Wert der beim anlegen des Beitrags als Titel hinzugefügt wurde**
+    - bisher musste der Titel immer doppelt geschrieben werden
+- **Der Seitentyp "Event" und "Beitrag" kann jetzt nurnoch in der entsprechenden Übersichtsseite angelegt werden**
+- **Hilfetext für das Datum auf Blogeinträgen angepasst**
+- **Zeichenbeschränkung für die Ort-Kurzbeschreibung in Events hinzugefügt**
+    - trägt der responsiven Darstellung auf der Website bei
+- **Wartungsmodus Logo zentriert**
+    - ist der Wartungsmodus aktiv, wird das Logo im Header mittig angezeigt
+
+## Version 3.8.8.4
 *13.01.2023*
 
 - **composer**

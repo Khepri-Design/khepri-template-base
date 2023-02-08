@@ -30,7 +30,7 @@ panel.plugin("khepri-design/khepri-base", {
     },
     button: {
       template: `
-        <div class="kd-button-preview" @dblclick="open">
+        <div class="kd-button-preview" @dblclick="open" :style="'background-color: '+ primarycolor">
           <input style="text-align: center" type="text" placeholder="Text eingeben..." class="wysiwyg-black"  :value="content.buttontext" @input="update({ buttontext: $event.target.value })"/>
         </div>
       `
@@ -56,7 +56,8 @@ panel.plugin("khepri-design/khepri-base", {
     divider: {
       template: `
         <div class="kd-divider-preview" @dblclick="open">
-          <hr>
+          <hr v-if="content.usecustomcolor" :class="content.dividertype" :style="{ color: content.customcolor }">
+          <hr v-if="!content.usecustomcolor" :class="content.dividertype">
         </div>
       `
     },
@@ -94,18 +95,6 @@ panel.plugin("khepri-design/khepri-base", {
         </div>
       `
     },
-    textadvanced: {
-      template: `
-        <div class="kd-text-advanced-preview" @dblclick="open">
-          <div v-if="content.text != ''">
-            <p v-html="content.text"></p>
-          </div>
-          <div v-else>
-            <p>Text eingeben...</p>
-          </div>
-        </div>
-      `
-    },
     accordion: {
       template: `
         <div @dblclick="open">
@@ -123,7 +112,8 @@ panel.plugin("khepri-design/khepri-base", {
     iframe: {
       template: `
         <div style="height: 70px" @dblclick="open">
-          <div style="display: inline-flex"><k-icon type="document"/>&nbsp;PDF-Datei:&nbsp;<b>{{ content.file[0].filename }}</b></div>
+          <div v-if="content.file[0]" style="display: inline-flex"><k-icon type="document"/>&nbsp;PDF-Datei:&nbsp;<b>{{ content.file[0].filename }}</b></div>
+          <div v-else style="display: inline-flex"><k-icon type="document"/>&nbsp;<span class="kd-empty">noch keine Datei ausgewählt...</span></div>
         </div>
       `
     }

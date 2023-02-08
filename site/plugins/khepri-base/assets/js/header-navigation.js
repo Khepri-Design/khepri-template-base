@@ -6,6 +6,11 @@ const onscroll = (el, listener) => {
 // Main-Navigation
 document.querySelectorAll('.mobile-nav-toggle')[0].addEventListener("click", function () {
     document.getElementById('navbar').classList.toggle('navbar-mobile');
+    var searchButton = document.querySelector('.kd-search-container-header-m');
+
+    if (searchButton) {
+        searchButton.classList.toggle('d-none');
+    }
 });
 
 function dropdownToggle(dropindex) {

@@ -1,0 +1,66 @@
+.kd-modal {
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(28, 30, 34, 0.9);
+    transition: 0.3s;
+    z-index: 99999;
+
+    .kd-modal-content {
+        display: block;
+        position: absolute;
+        top: 95px;
+        right: 150px;
+        left: 150px;
+        max-height: 650px;
+        border-radius: var(--kd-border-radius);
+        background-color: var(--kd-body-color);
+        overflow-y: scroll;
+        transition: .3s;
+
+        @media screen and (max-width: 1350px) {
+            right: 30px;
+            left: 30px;
+            max-height: 450px;
+        }
+    }
+
+    .kd-modal-close {
+        position: absolute;
+        right: 55%;
+        left: 36%;
+        top: 775px;
+
+        @media screen and (max-width: 1750px) {
+            left: 32%;
+        }
+
+        @media screen and (max-width: 1350px) {
+            right: 25%;
+            left: 25%;
+            top: 635px;
+            min-width: 0;
+        }
+    }
+
+    .kd-modal-accept {
+        position: absolute;
+        right: 40%;
+        left: 51%;
+        top: 775px;
+
+        @media screen and (max-width: 1750px) {
+            left: 54%;
+        }
+
+        @media screen and (max-width: 1350px) {
+            right: 25%;
+            left: 25%;
+            top: 575px;
+            min-width: 0;
+        }
+    }
+}

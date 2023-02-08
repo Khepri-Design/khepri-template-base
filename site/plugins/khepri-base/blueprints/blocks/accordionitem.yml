@@ -13,7 +13,24 @@ fields:
     label: Inhalt
     fieldsets:
       - heading
-      - textadvanced
+      - text
+      text:
+        extends: blocks/text
+        fields:
+          color:
+            label: Hintergrundfarbe
+            type: colors
+            width: 1/2
+            help: Farbwert eintragen
+          classes:
+            label: Zusätzliche CSS-Klassen
+            help: z.B. "kd-round", "kd-shadow" oder "kd-text-primary"
+            type: text
+            width: 1/2
+          animation:
+            help: z.B. "fade-in", "zoom-in" oder "slide-up"
+            type: text
+            width: 1/2
       - image
       - video
       - download

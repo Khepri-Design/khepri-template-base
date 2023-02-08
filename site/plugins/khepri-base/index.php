@@ -10,6 +10,7 @@ kirby()->extend([
   'options' => require __DIR__ . '/config/config.php',
 ]);
 
+//twig test for existing file method
 function twig_test_existing($file) {
     return file_exists($file);
 }
@@ -48,10 +49,11 @@ Kirby::plugin('khepri-design/khepri-base', [
     'blocks/hook' => __DIR__ . '/blueprints/blocks/hook.yml',
     'blocks/gallery' => __DIR__ . '/blueprints/blocks/gallery.yml',
     'blocks/heading' => __DIR__ . '/blueprints/blocks/heading.yml',
-    'blocks/textadvanced' => __DIR__ . '/blueprints/blocks/textadvanced.yml',
+    'blocks/image' => __DIR__ . '/blueprints/blocks/image.yml',
     'files/default' => __DIR__ . '/blueprints/files/default.yml',
   ],
   'controllers' => [
+    'site' => require 'controllers/site.php',
     'login' => require 'controllers/login.php',
     'contact' => require 'controllers/contact.php'
   ],
@@ -62,6 +64,7 @@ Kirby::plugin('khepri-design/khepri-base', [
     'includes/route' => __DIR__ . '/snippets/includes/route.twig',
     'includes/blog-preview' => __DIR__ . '/snippets/includes/blog-preview.twig',
     'includes/event-preview' => __DIR__ . '/snippets/includes/event-preview.twig',
+    'includes/search' => __DIR__ . '/snippets/includes/search.twig',
     'head/head' => __DIR__ . '/snippets/head/head.twig',
     'head/head-dynamic-styles' => __DIR__ . '/snippets/head/head-dynamic-styles.twig',
     'head/head-includes' => __DIR__ . '/snippets/head/head-includes.twig',
@@ -76,6 +79,7 @@ Kirby::plugin('khepri-design/khepri-base', [
     'blocks/gallery' => __DIR__ . '/snippets/blocks/gallery.twig',
     'blocks/video' => __DIR__ . '/snippets/blocks/video.twig',
     'blocks/list' => __DIR__ . '/snippets/blocks/list.twig',
+    'blocks/text' => __DIR__ . '/snippets/blocks/text.twig',
     'blocks/audio' => __DIR__ . '/snippets/blocks/audio.twig',
     'blocks/button' => __DIR__ . '/snippets/blocks/button.twig',
     'blocks/cardbox' => __DIR__ . '/snippets/blocks/cardbox.twig',
@@ -89,7 +93,7 @@ Kirby::plugin('khepri-design/khepri-base', [
     'blocks/accordion' => __DIR__ . '/snippets/blocks/accordion.twig',
     'blocks/accordionitem' => __DIR__ . '/snippets/blocks/accordionitem.twig',
     'blocks/hook' => __DIR__ . '/snippets/blocks/hook.twig',
-    'blocks/textadvanced' => __DIR__ . '/snippets/blocks/textadvanced.twig',
+    'sitemap' => __DIR__ . '/snippets/sitemap.twig',
   ],
   'templates' => [
     'blog-item' => __DIR__ . '/templates/blog-item.twig',
@@ -105,6 +109,7 @@ Kirby::plugin('khepri-design/khepri-base', [
     'default' => __DIR__ . '/templates/default.twig',
     'login' => __DIR__ . '/templates/login.twig',
     'contact' => __DIR__ . '/templates/contact.twig',
+    'search' => __DIR__ . '/templates/search.twig',
     'emails/email' => __DIR__ . '/templates/emails/email.twig',
     'emails/email.html' => __DIR__ . '/templates/emails/email.html.twig',
   ],

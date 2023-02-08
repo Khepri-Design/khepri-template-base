@@ -79,7 +79,7 @@
                                     {% endfor %}
                                 {% endif %}
                                 <label for="agree">
-                                    <input class="kd-checkbox" type="checkbox" id="agree" name="agree">&nbsp;&nbsp;Ich akzeptiere die <a class="kd-underlined" href="{{ page('Datenschutz').url }}" target="_blank">Datenschutzbestimmungen</a> <span class="kd-abbreviation">*<span>
+                                    <input class="kd-checkbox" type="checkbox" id="agree" name="agree">&nbsp;&nbsp;Ich akzeptiere die <span class="kd-underlined kd-text-primary kd-modal-open kd-mouseover-pointer" aria-expanded="false">Datenschutzbestimmungen</span> <span class="kd-abbreviation">*<span>
                                 </label>
                                 {% if alert['agree'] is defined %}
                                     <p class="kd-alert error"> {{ esc(alert['agree']) }} </p>
@@ -91,6 +91,17 @@
                             </div>
                         </form>
                     {% endif %}
+                </div>
+                <div class="kd-modal d-none">
+                    <div class="kd-modal-content">
+                        <div class="column">
+                            <h3 class="kd-heading justify-content-center d-flex text-center mt-3">Datenschutzerklärung</h3>
+                            <hr class="mt-3 mb-3 kd-divider">
+                        </div>
+                        <div class="kd-container">{{ page('datenschutz').pagecontent.kt | raw }}</div>
+                    </div>
+                    <span class="kd-btn kd-btn-warn kd-mouseover-pointer kd-modal-close"><b>schließen</b></span>
+                    <span class="kd-btn kd-btn-good kd-mouseover-pointer kd-modal-accept"><b>akzeptieren</b></span>
                 </div>
             </div>
             

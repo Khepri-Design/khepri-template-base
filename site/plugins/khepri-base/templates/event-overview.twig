@@ -29,7 +29,7 @@
                                                 {% set eventImage = event.eventImg.toFile %}
                                                     {% if eventImage %}<img class="kd-round-top kd-card-image" width="100%" height="300px" loading="lazy" src="{{ eventImage.url }}" alt="{{ eventImage.name }}">{% endif %}
                                                     <div class="kd-card-body">
-                                                        <figcaption class="kd-card-title kd-text-primary kd-text-md kd-text-heavy">{{ event.customTitle }}</figcaption>
+                                                        <figcaption class="kd-card-title kd-text-primary kd-text-md kd-text-heavy text-center">{{ event.title }}</figcaption>
                                                         <hr class="mb-4 kd-divider">
                                                         <div class="row">
                                                             <div class="col-12 kd-event-data">
@@ -79,7 +79,7 @@
                                                 {% set eventImage = event.eventImg.toFile %}
                                                     {% if eventImage %}<img class="kd-round-top kd-card-image" width="100%" height="300px" loading="lazy" src="{{ eventImage.url }}" alt="{{ eventImage.name }}">{% endif %}
                                                     <div class="kd-card-body">
-                                                        <figcaption class="kd-card-title kd-text-primary kd-text-md kd-text-heavy">{{ event.customTitle }}</figcaption>
+                                                        <figcaption class="kd-card-title kd-text-primary kd-text-md kd-text-heavy">{{ event.title }}</figcaption>
                                                         <hr class="mb-4 kd-divider">
                                                         <div class="row">
                                                             <div class="col-12 kd-event-data">

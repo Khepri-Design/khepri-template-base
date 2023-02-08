@@ -23,9 +23,7 @@ tabs:
           - home
           - page
           - page-heading
-          - blog-item
           - blog-overview
-          - event-item
           - event-overview
           - impressum
           - datenschutz
@@ -35,9 +33,7 @@ tabs:
           - page
           - page-heading
           - link
-          - blog-item
           - blog-overview
-          - event-item
           - event-overview
           - contact
       intern:
@@ -111,24 +107,28 @@ tabs:
           footerSectionOneHeading:
             type: text
             label: Überschrift Footerspalte 1
-            width: 1/3
+            width: 1/4
           footerSectionTwoHeading:
             type: text
             label: Überschrift Footerspalte 2
-            width: 1/3
+            width: 1/4
           footerSectionThreeHeading:
             type: text
             label: Überschrift Footerspalte 3
-            width: 1/3
+            width: 1/4
           serviceNavigation:
             type: toggle
             label: 3. Footerspalte in Copyright-Leiste anzeigen
-            width: 1/2
+            width: 1/4
+          headerSearch:
+            type: toggle
+            label: Suche im Header aktivieren
+            width: 1/4
           footerDescription:
             type: textarea
             label: Footer-Beschreibung
             help: Wird am Ende der Seite (Footer) angezeigt
-            width: 1/2
+            width: 3/4
   
   socialMedia:
     label: Social Media
