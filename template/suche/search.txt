@@ -1,0 +1,17 @@
+Title: Suchen
+
+----
+
+Mainnavigation: false
+
+----
+
+Footernavigationone: false
+
+----
+
+Footernavigationtwo: false
+
+----
+
+Footernavigationthree: false

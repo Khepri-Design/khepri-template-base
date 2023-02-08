@@ -1,0 +1,126 @@
+Title: Impressum
+
+----
+
+Customarea:
+
+**WebDemo**
+Musterstraße 21
+45367 Musterstadt
+
+E-Mail: (link: mailto:test@mail.de text: test@mail.de)
+Telefon: (link: tel:+49 123456789 text: +49 123456789)
+
+**Inhaltlich verantwortlich nach §5 TMG:** Vorname Nachname
+
+----
+
+Copyrigth: true
+
+----
+
+Argument: true
+
+----
+
+Robots: index, follow
+
+----
+
+Topics: Impressum
+
+----
+
+Shortdescription: Impressum
+
+----
+
+Description: Hier finden Sie das Impressum unserer Firma
+
+----
+
+Mainnavigation: false
+
+----
+
+Footernavigationone: false
+
+----
+
+Footernavigationtwo: false
+
+----
+
+Footernavigationthree: true
+
+----
+
+Copyright: true
+
+----
+
+Additionalfields: copyright, argument
+
+----
+
+Brandname: WebDemo GmbH
+
+----
+
+Adressone: Musterstraße 21
+
+----
+
+Adresstwo: 45367 Musterstadt
+
+----
+
+Mail: test@mail.de
+
+----
+
+Tel: +49 123456789
+
+----
+
+Customone: 
+
+----
+
+Customtwo: 
+
+----
+
+Customthree: 
+
+----
+
+Customareaone: 
+
+----
+
+Customareatwo: 
+
+----
+
+Responseperson: Vorname Nachname
+
+----
+
+Text: 
+
+----
+
+Footenavigationone: 
+
+----
+
+Footenavigationtwo: 
+
+----
+
+Footenavigationthree: 1
+
+----
+
+Uuid: AdK41VBqKBxd3gTa
