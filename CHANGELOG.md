@@ -1,3 +1,11 @@
+## Version 3.9.1.2
+*09.02.2023*
+
+- **Fix: Textblöcke brachen teilweise das Layout wenn diese in einer Card oder einem Akkoredeon platziert werden**
+    - grund dafür war ein fehlendes '</div>'
+
+- **Textblöcke können jetzt mittig ausgerichtet werden**
+
 ## Version 3.9.1.1
 *07.02.2023*
 

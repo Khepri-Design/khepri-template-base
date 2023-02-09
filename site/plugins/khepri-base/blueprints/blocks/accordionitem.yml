@@ -17,6 +17,13 @@ fields:
       text:
         extends: blocks/text
         fields:
+          centered:
+            label: Mittig ausrichten
+            type: toggle
+            width: 1/2
+            text: 
+              - nein
+              - ja
           color:
             label: Hintergrundfarbe
             type: colors
